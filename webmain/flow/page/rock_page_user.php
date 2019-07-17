@@ -21,10 +21,12 @@ $(document).ready(function(){
             var myselect=document.getElementById("selectAge");
             var index=myselect.selectedIndex ;
             var val = myselect.options[index].value;
-            //console.log(val);
+            var id=0;
+            if(lx==1)id=a.changeid;
             if(val == 1){
-                var id=0;
-                if(lx==1)id=a.changeid;
+
+                openinput(modename,"jsuser",id,'opegs{rand}');
+            }else if(val == 1){
                 openinput(modename,modenum,id,'opegs{rand}');
             }else{
                 alert("页面正在开发");
