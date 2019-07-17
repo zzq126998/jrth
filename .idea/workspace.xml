@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ce61f01e-dbdc-4e62-86ac-b815d15b4ce3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmain/flow/page/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/page/input_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmain/flow/page/rock_page_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/page/rock_page_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmain/flow/page/view_hrcheck_0.html" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/page/view_hrcheck_0.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +16,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api.php">
+      <file leaf-file-name="mode_userAction.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+            <state relative-caret-position="-1690">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mode_userinfoAction.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userinfoAction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1573" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webmainAction.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/webmainAction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="202" column="100" selection-start-line="202" selection-start-column="87" selection-end-line="202" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rock_page_user.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/page/rock_page_user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="599">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <folding>
+                <element signature="e#13941#13948#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mode_user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tpl_input_lu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="128" column="87" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="87" />
+              <folding>
+                <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -34,6 +86,18 @@
       <find>div_name</find>
       <find>AltSspan</find>
       <find>div_groupname</find>
+      <find>新增</find>
+      <find>addbtn_1563245224670_3249</find>
+      <find>content_allmainview</find>
+      <find>系统内信息</find>
+      <find>姓名</find>
+      <find>initbodys</find>
+      <find>publicstore</find>
+      <find>头像</find>
+      <find>上级主管</find>
+      <find>ranking</find>
+      <find>success</find>
+      <find>clickwin</find>
     </findStrings>
     <dirStrings>
       <dir>E:\project\stage\webmain\model</dir>
@@ -50,6 +114,9 @@
         <option value="$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html" />
         <option value="$PROJECT_DIR$/webmain/flow/input/inputjs/input.js" />
         <option value="$PROJECT_DIR$/api.php" />
+        <option value="$PROJECT_DIR$/webmain/flow/page/input_user.html" />
+        <option value="$PROJECT_DIR$/webmain/flow/page/view_hrcheck_0.html" />
+        <option value="$PROJECT_DIR$/webmain/flow/page/rock_page_user.php" />
       </list>
     </option>
   </component>
@@ -59,7 +126,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="-4" />
     <option name="width" value="926" />
     <option name="height" value="921" />
@@ -75,6 +142,39 @@
             <path>
               <item name="stage" type="b2602c69:ProjectViewProjectNode" />
               <item name="stage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webmain" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webmain" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="flow" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webmain" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="flow" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="input" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webmain" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="flow" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="input" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="inputjs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webmain" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="flow" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="page" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -112,23 +212,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563176057964</updated>
-      <workItem from="1563176059386" duration="4582000" />
+      <workItem from="1563176059386" duration="16762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4582000" />
+    <option name="totallyTimeSpent" value="16762000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32900432" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16151386" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32900432" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32900432" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16151386" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -145,6 +255,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -317,16 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="136" column="53" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/chajian/mailerChajian.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-546" />
@@ -351,6 +477,163 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/page/input_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/reim_xin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="599" column="98" selection-start-line="599" selection-start-column="98" selection-end-line="599" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#143#149#0" expanded="true" />
+            <element signature="e#150#156#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#188#194#1" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#53#59#1" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#107#113#0" expanded="true" />
+            <element signature="e#113#119#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#166#172#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/page/view_hrcheck_0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="128" column="87" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/page/rock_page_userinfo.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1690">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userinfoAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1573" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/page/rock_page_news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="283" column="124" selection-start-line="283" selection-start-column="124" selection-end-line="283" selection-end-column="124" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/webmainAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="202" column="100" selection-start-line="202" selection-start-column="87" selection-end-line="202" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/page/rock_page_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#13941#13948#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

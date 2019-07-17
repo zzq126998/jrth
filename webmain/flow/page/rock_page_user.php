@@ -11,16 +11,25 @@ $(document).ready(function(){
 	{params}
 	var modenum = 'user',modename='用户',isflow=0,modeid='10',atype = params.atype,pnum=params.pnum,modenames='';
 	if(!atype)atype='';if(!pnum)pnum='';
-	var fieldsarr = [{"name":"\u7533\u8bf7\u4eba","fields":"base_name"},{"name":"\u7533\u8bf7\u4eba\u90e8\u95e8","fields":"base_deptname"},{"name":"\u5355\u53f7","fields":"sericnum"},{"fields":"face","name":"\u5934\u50cf","fieldstype":"uploadimg","ispx":"0","isalign":"0","islb":"1"},{"fields":"name","name":"\u59d3\u540d","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"user","name":"\u7528\u6237\u540d","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"pass","name":"\u5bc6\u7801","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"num","name":"\u7f16\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"workdate","name":"\u5165\u804c\u65e5\u671f","fieldstype":"date","ispx":"1","isalign":"0","islb":"0"},{"fields":"sex","name":"\u6027\u522b","fieldstype":"select","ispx":"0","isalign":"0","islb":"1"},{"fields":"mobile","name":"\u624b\u673a\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"deptid","name":"\u90e8\u95e8Id","fieldstype":"number","ispx":"0","isalign":"0","islb":"0"},{"fields":"deptname","name":"\u90e8\u95e8","fieldstype":"changedept","ispx":"0","isalign":"0","islb":"1"},{"fields":"ranking","name":"\u804c\u4f4d","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"deptnames","name":"\u591a\u90e8\u95e8","fieldstype":"changedeptcheck","ispx":"0","isalign":"0","islb":"0"},{"fields":"rankings","name":"\u591a\u804c\u4f4d","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"superman","name":"\u4e0a\u7ea7\u4e3b\u7ba1","fieldstype":"changeusercheck","ispx":"0","isalign":"0","islb":"1"},{"fields":"superid","name":"\u4e0a\u7ea7\u4e3b\u7ba1id","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"pingyin","name":"\u540d\u5b57\u62fc\u97f3","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"tel","name":"\u7535\u8bdd","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"email","name":"\u90ae\u7bb1","fieldstype":"email","ispx":"0","isalign":"0","islb":"0"},{"fields":"weixinid","name":"\u5fae\u4fe1\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"companyid","name":"\u6240\u5c5e\u5355\u4f4d","fieldstype":"select","ispx":"0","isalign":"0","islb":"0"},{"fields":"status","name":"\u542f\u7528","fieldstype":"select","ispx":"1","isalign":"0","islb":"1"},{"fields":"type","name":"\u7ba1\u7406\u5458","fieldstype":"select","ispx":"1","isalign":"0","islb":"1"},{"fields":"id","name":"\u7528\u6237Id","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"sort","name":"\u6392\u5e8f\u53f7","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"groupname","name":"\u6240\u5728\u7ec4","fieldstype":"checkboxall","ispx":"0","isalign":"0","islb":"0"},{"fields":"isvcard","name":"\u901a\u8baf\u5f55","fieldstype":"checkbox","ispx":"0","isalign":"0","islb":"1"},{"fields":"dwid","name":"\u66f4\u591a\u5355\u4f4d","fieldstype":"hidden","ispx":"0","isalign":"0","islb":"0"},{"fields":"temp_dwid","name":"\u66f4\u591a\u6240\u5c5e\u5355\u4f4d","fieldstype":"selectdatatrue","ispx":"0","isalign":"0","islb":"0"}],fieldsselarr= [];
+	var fieldsarr = [{"name":"\u7533\u8bf7\u4eba","fields":"base_name"},{"name":"\u7533\u8bf7\u4eba\u90e8\u95e8","fields":"base_deptname"},{"name":"\u5355\u53f7","fields":"sericnum"},{"fields":"class_user","name":"\u5206\u7c7b","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"face","name":"\u5934\u50cf","fieldstype":"uploadimg","ispx":"0","isalign":"0","islb":"1"},{"fields":"name","name":"\u59d3\u540d","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"user","name":"\u7528\u6237\u540d","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"pass","name":"\u5bc6\u7801","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"num","name":"\u7f16\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"workdate","name":"\u5165\u804c\u65e5\u671f","fieldstype":"date","ispx":"1","isalign":"0","islb":"0"},{"fields":"sex","name":"\u6027\u522b","fieldstype":"select","ispx":"0","isalign":"0","islb":"1"},{"fields":"mobile","name":"\u624b\u673a\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"deptid","name":"\u90e8\u95e8Id","fieldstype":"number","ispx":"0","isalign":"0","islb":"0"},{"fields":"deptname","name":"\u90e8\u95e8","fieldstype":"changedept","ispx":"0","isalign":"0","islb":"1"},{"fields":"ranking","name":"\u804c\u4f4d","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"deptnames","name":"\u591a\u90e8\u95e8","fieldstype":"changedeptcheck","ispx":"0","isalign":"0","islb":"0"},{"fields":"rankings","name":"\u591a\u804c\u4f4d","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"superman","name":"\u4e0a\u7ea7\u4e3b\u7ba1","fieldstype":"changeusercheck","ispx":"0","isalign":"0","islb":"1"},{"fields":"superid","name":"\u4e0a\u7ea7\u4e3b\u7ba1id","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"pingyin","name":"\u540d\u5b57\u62fc\u97f3","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"tel","name":"\u7535\u8bdd","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"email","name":"\u90ae\u7bb1","fieldstype":"email","ispx":"0","isalign":"0","islb":"0"},{"fields":"weixinid","name":"\u5fae\u4fe1\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"companyid","name":"\u6240\u5c5e\u5355\u4f4d","fieldstype":"select","ispx":"0","isalign":"0","islb":"0"},{"fields":"status","name":"\u542f\u7528","fieldstype":"select","ispx":"1","isalign":"0","islb":"1"},{"fields":"type","name":"\u7ba1\u7406\u5458","fieldstype":"select","ispx":"1","isalign":"0","islb":"1"},{"fields":"id","name":"\u7528\u6237Id","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"sort","name":"\u6392\u5e8f\u53f7","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"groupname","name":"\u6240\u5728\u7ec4","fieldstype":"checkboxall","ispx":"0","isalign":"0","islb":"0"},{"fields":"isvcard","name":"\u901a\u8baf\u5f55","fieldstype":"checkbox","ispx":"0","isalign":"0","islb":"1"},{"fields":"dwid","name":"\u66f4\u591a\u5355\u4f4d","fieldstype":"hidden","ispx":"0","isalign":"0","islb":"0"},{"fields":"temp_dwid","name":"\u66f4\u591a\u6240\u5c5e\u5355\u4f4d","fieldstype":"selectdatatrue","ispx":"0","isalign":"0","islb":"0"}],fieldsselarr= [];
 	
 	var c = {
 		reload:function(){
 			a.reload();
 		},
 		clickwin:function(o1,lx){
-			var id=0;
-			if(lx==1)id=a.changeid;
-			openinput(modename,modenum,id,'opegs{rand}');
+            var myselect=document.getElementById("selectAge");
+            var index=myselect.selectedIndex ;
+            var val = myselect.options[index].value;
+            //console.log(val);
+            if(val == 1){
+                var id=0;
+                if(lx==1)id=a.changeid;
+                openinput(modename,modenum,id,'opegs{rand}');
+            }else{
+                alert("页面正在开发");
+            }
+
 		},
 		view:function(){
 			var d=a.changedata;
@@ -210,7 +219,7 @@ $(document).ready(function(){
 		fanye:true,modenum:modenum,modename:modename,statuschange:false,tablename:jm.base64decode('YWRtaW4:'),
 		url:c.storeurl(),storeafteraction:'storeaftershow',storebeforeaction:'storebeforeshow',
 		params:{atype:atype},
-		columns:[{text:"头像",dataIndex:"face"},{text:"姓名",dataIndex:"name"},{text:"用户名",dataIndex:"user"},{text:"性别",dataIndex:"sex"},{text:"部门",dataIndex:"deptname"},{text:"职位",dataIndex:"ranking"},{text:"上级主管",dataIndex:"superman"},{text:"电话",dataIndex:"tel"},{text:"启用",dataIndex:"status",sortable:true},{text:"管理员",dataIndex:"type",sortable:true},{text:"用户Id",dataIndex:"id"},{text:"排序号",dataIndex:"sort"},{text:"通讯录",dataIndex:"isvcard"},{
+		columns:[{text:"分类",dataIndex:"class_user"},{text:"头像",dataIndex:"face"},{text:"姓名",dataIndex:"name"},{text:"用户名",dataIndex:"user"},{text:"性别",dataIndex:"sex"},{text:"部门",dataIndex:"deptname"},{text:"职位",dataIndex:"ranking"},{text:"上级主管",dataIndex:"superman"},{text:"电话",dataIndex:"tel"},{text:"启用",dataIndex:"status",sortable:true},{text:"管理员",dataIndex:"type",sortable:true},{text:"用户Id",dataIndex:"id"},{text:"排序号",dataIndex:"sort"},{text:"通讯录",dataIndex:"isvcard"},{
 			text:'',dataIndex:'caozuo',callback:'opegs{rand}'
 		}],
 		itemdblclick:function(){
@@ -333,8 +342,45 @@ if(atype=='all'){
 <div>
 	<table width="100%">
 	<tr>
-		<td style="padding-right:10px;" id="tdleft_{rand}" nowrap><button id="addbtn_{rand}" class="btn btn-primary" click="clickwin,0" disabled type="button"><i class="icon-plus"></i> 新增</button></td>
-		<td>
+<!--		<td style="padding-right:10px;" id="tdleft_{rand}" nowrap><button id="addbtn_{rand}" class="btn btn-primary" click="clickwin,0" disabled type="button"><i class="icon-plus"></i> 新增</button></td>-->
+        <td style="padding-right:10px;" id="tdleft_{rand}" nowrap><button id="addbtn_{rand}" class="btn btn-primary" data-toggle="modal" data-target="#myModal" disabled type="button"><i class="icon-plus"></i> 新增</button></td>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">选择添加类型</h4>
+                    </div>
+                    <div class="modal-body">
+                        <select name="selectAge" id="selectAge" style="height: 30px;width: 100%;">
+                            <option value="1">技术类</option>
+                            <option value="2">运营类</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" click="clickwin,0">下一步</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <td>
 			<input class="form-control" style="width:160px" id="key_{rand}" placeholder="关键字">
 		</td>
 		
