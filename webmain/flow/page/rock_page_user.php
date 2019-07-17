@@ -24,9 +24,12 @@ $(document).ready(function(){
             //console.log(val);
             $("#myModal").hide();
             $(".modal-backdrop").hide();
+            var id=0;
+            if(lx==1)id=a.changeid;
             if(val == 1){
-                var id=0;
-                if(lx==1)id=a.changeid;
+
+                openinput(modename,"jsuser",id,'opegs{rand}');
+            }else if(val == 2){
                 openinput(modename,modenum,id,'opegs{rand}');
             }else{
                 alert("页面正在开发");
