@@ -22,6 +22,8 @@ $(document).ready(function(){
             var index=myselect.selectedIndex ;
             var val = myselect.options[index].value;
             //console.log(val);
+            $("#myModal").hide();
+            $(".modal-backdrop").hide();
             if(val == 1){
                 var id=0;
                 if(lx==1)id=a.changeid;
@@ -318,6 +320,11 @@ if(atype=='all'){
 	}
 }
 
+$(".adds").click(function (){
+    $("#myModal").show();
+    $(".modal-backdrop").show();
+})
+
 //[自定义区域end]
 
 	js.initbtn(c);
@@ -343,7 +350,7 @@ if(atype=='all'){
 	<table width="100%">
 	<tr>
 <!--		<td style="padding-right:10px;" id="tdleft_{rand}" nowrap><button id="addbtn_{rand}" class="btn btn-primary" click="clickwin,0" disabled type="button"><i class="icon-plus"></i> 新增</button></td>-->
-        <td style="padding-right:10px;" id="tdleft_{rand}" nowrap><button id="addbtn_{rand}" class="btn btn-primary" data-toggle="modal" data-target="#myModal" disabled type="button"><i class="icon-plus"></i> 新增</button></td>
+        <td style="padding-right:10px;" id="tdleft_{rand}" nowrap><button id="addbtn_{rand}" class="btn btn-primary" data-toggle="modal" data-target="#myModal" disabled type="button"><i class="icon-plus adds"></i> 新增</button></td>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -360,25 +367,10 @@ if(atype=='all'){
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                         <button type="button" class="btn btn-primary" click="clickwin,0">下一步</button>
-                    </div>
-                </div>
-            </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+        </div>
 
         <td>
 			<input class="form-control" style="width:160px" id="key_{rand}" placeholder="关键字">
