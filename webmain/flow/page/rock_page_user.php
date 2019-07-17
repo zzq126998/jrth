@@ -21,13 +21,14 @@ $(document).ready(function(){
             var myselect=document.getElementById("selectAge");
             var index=myselect.selectedIndex ;
             var val = myselect.options[index].value;
+
             //console.log(val);
             $("#myModal").hide();
             $(".modal-backdrop").hide();
+
             var id=0;
             if(lx==1)id=a.changeid;
             if(val == 1){
-
                 openinput(modename,"jsuser",id,'opegs{rand}');
             }else if(val == 2){
                 openinput(modename,modenum,id,'opegs{rand}');
