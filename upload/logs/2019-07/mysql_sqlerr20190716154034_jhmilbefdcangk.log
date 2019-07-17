@@ -1,0 +1,17 @@
+[ERROR SQL]
+SELECT  FROM xinhu_people_class
+
+[Reason]
+mysqliError:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM xinhu_people_class' at line 1
+
+[URL]
+http://xinhu.cc/index.php?a=lu&m=input&d=flow&num=user&rnd=760199
+
+[IP]
+127.0.0.1
+
+[datetime]
+2019-07-16 15:40:34
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36
