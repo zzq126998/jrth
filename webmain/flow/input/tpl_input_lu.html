@@ -57,7 +57,7 @@ var editor,arr=<?=$da['fieldsjson']?>,moders=<?=json_encode($da['moders'])?>,gon
 			<?php 
 			$firstrs 	= array();
 			$coursestr 	= '';
-			for($i=0;$i<$da['zbshu'];$i++)echo '<input value="0" type="hidden" name="sub_totals'.$i.'">';
+			for($i=0;$i<$da['zbshu'];$i++)echo '<input value="'.$i.'" type="hidden" name="sub_totals'.$i.'">';
 			echo $da['content'];
 			if($da['course']){
 				

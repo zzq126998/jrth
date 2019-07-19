@@ -1,5 +1,5 @@
 <script src="../../../web/res/js/inputs.js"></script>
-<script type="text/javascript" src="/web/res/js/jquery.1.9.1.min.js"></script>
+
 <script src="/mode/bootstrap3.3/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" id="mainstylecss" href="/mode/bootstrap3.3/css/bootstrap_cerulean.css">
 {peoid} <strong>基本信息</strong>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">身份证号</td>
-        <td class="ys2">{user}</td>
+        <td class="ys2">{idnumber}</td>
         <td class="ys1" align="right">地址</td>
         <td class="ys2">{address}</td>
     </tr>
@@ -91,29 +91,29 @@
         <td height="34" width="15%" align="right" class="ys1">*执照类型</td>
         <td class="ys2" width="35%">{permittype}</td>
         <td align="right" class="ys1" width="15%">执照编号</td>
-        <td class="ys2" width="35%">[num1,0]</td>
+        <td class="ys2" width="35%">[num0,0]</td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">姓名</td>
-        <td class="ys2">[name1,0]</td>
+        <td class="ys2">[name0,0]</td>
         <td class="ys1" align="right">性别</td>
-        <td class="ys2"><span>[sex1,0]</span></td>
+        <td class="ys2"><span>[sex0,0]</span></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">出生日期</td>
-        <td class="ys2">[date1,0]</td>
+        <td class="ys2">[date0,0]</td>
         <td class="ys1" align="right">地址</td>
-        <td class="ys2"><span>[address1,0]</span></td>
+        <td class="ys2"><span>[address0,0]</span></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">国籍</td>
-        <td class="ys2">[nationality1,0]</td>
+        <td class="ys2">[nationality0,0]</td>
         <td class="ys1" align="right">有效期</td>
-        <td class="ys2"><span>[term_validity1,0]</span></td>
+        <td class="ys2"><span>[term_validity0,0]</span></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">备注</td>
-        <td class="ys2">[moretext1,0]</td>
+        <td class="ys2">[moretext0,0]</td>
         <td class="ys1" align="right"><br/></td>
         <td class="ys2"><br/></td>
     </tr>
@@ -124,7 +124,7 @@
     <tbody>
     <tr>
         <td height="34" width="15%" align="right" class="ys1">年龄</td>
-        <td class="ys2" width="35%">[age2,0]</td>
+        <td class="ys2" width="35%">[age1,0]</td>
         <td align="right" class="ys1" width="15%"><br/></td>
         <td class="ys2" width="35%"></td>
     </tr>
@@ -136,27 +136,27 @@
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">体检编号</td>
-        <td class="ys2">[anum2,0]</td>
+        <td class="ys2">[anum1,0]</td>
         <td class="ys1" align="right">姓名</td>
-        <td class="ys2"><span>[aname2,0]</span></td>
+        <td class="ys2"><span>[aname1,0]</span></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">性别</td>
-        <td class="ys2">[asex2,0]</td>
+        <td class="ys2">[asex1,0]</td>
         <td class="ys1" align="right">出生年月</td>
-        <td class="ys2"><span>[adate2,0]</span></td>
+        <td class="ys2"><span>[adate1,0]</span></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">国籍</td>
-        <td class="ys2">[anationality2,0]</td>
+        <td class="ys2">[anationality1,0]</td>
         <td class="ys1" align="right">限制<br/></td>
-        <td class="ys2">[alimit2,0]<br/></td>
+        <td class="ys2">[alimit1,0]<br/></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">发证日期</td>
-        <td class="ys2">[adateissue2,0]</td>
+        <td class="ys2">[adateissue1,0]</td>
         <td class="ys1" align="right">有效期<br/></td>
-        <td class="ys2">[atermvalidity2,0]<br/></td>
+        <td class="ys2">[atermvalidity1,0]<br/></td>
     </tr>
     <tr>
         <td height="34" align="right" style="color:#555555;font-weight:bold;">二级体检</td>
@@ -166,27 +166,27 @@
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">体检编号</td>
-        <td class="ys2">[bnum2,0]</td>
+        <td class="ys2">[bnum1,0]</td>
         <td class="ys1" align="right">姓名</td>
-        <td class="ys2"><span>[bname2,0]</span></td>
+        <td class="ys2"><span>[bname1,0]</span></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">性别</td>
-        <td class="ys2">[bsex2,0]</td>
+        <td class="ys2">[bsex1,0]</td>
         <td class="ys1" align="right">出生年月</td>
-        <td class="ys2">[bdate2,0]</td>
+        <td class="ys2">[bdate1,0]</td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">国籍</td>
-        <td class="ys2">[bnationality2,0]</td>
+        <td class="ys2">[bnationality1,0]</td>
         <td class="ys1" align="right">限制<br/></td>
-        <td class="ys2">[blimit2,0]<br/></td>
+        <td class="ys2">[blimit1,0]<br/></td>
     </tr>
     <tr>
         <td height="34" align="right" class="ys1">发证日期</td>
-        <td class="ys2">[bdateissue2,0]</td>
+        <td class="ys2">[bdateissue1,0]</td>
         <td class="ys1" align="right">有效期<br/></td>
-        <td class="ys2">[btermvalidity2,0]<br/></td>
+        <td class="ys2">[btermvalidity1,0]<br/></td>
     </tr>
     </tbody>
 </table>
