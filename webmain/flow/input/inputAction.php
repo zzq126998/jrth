@@ -276,9 +276,12 @@ class inputAction extends Action
 		$iszb		= $xu+1;
 		$farr		= m('flow_element')->getrows("`mid`='$modeid' and `islu`=1 and `iszb`=$iszb",'`name`,`fields`,`isbt`,`fieldstype`,`savewhere`,`dev`,`data`','`sort`');
 		$sort 		= 0;
+<<<<<<< HEAD
 		if($oi>0){
             $oi=$oi-1;
         }
+=======
+>>>>>>> c92598edbccd63fc4eb6ceaabc4348fc60b9611b
 		for($i=0; $i<=$oi; $i++){
 			$sid  = (int)$this->post('sid'.$xu.'_'.$i.'');
 			$bos  = true;
@@ -318,6 +321,7 @@ class inputAction extends Action
 		$idss		= '0';
 		$whes 		= '';
 		$allfields 	= $this->db->getallfields('[Q]'.$tables.'');
+//        var_dump($data);exit;
 		$oarray 	= array();
 		if(in_array('optdt', $allfields))$oarray['optdt'] 		= $this->now;
 		if(in_array('optid', $allfields))$oarray['optid'] 		= $this->adminid;
