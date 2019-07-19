@@ -26,5 +26,28 @@ class mode_jsuserClassAction extends inputAction{
 	protected function saveafter($table, $arr, $id, $addbo){
 		
 	}
-}	
+    public function flylimit(){
+        $arr[]=array(
+            "name"=>"121"
+        );
+        $arr[]=array(
+            "name"=>"135"
+        );
+        $arr[]=array(
+            "name"=>"91"
+        );
+        return $arr;
+    }
+    public function bflylimit(){
+        $arr[]=array(
+            "name"=>"91"
+        );
+        return $arr;
+    }
+    public function permittype(){
+        $str="<span id=\"div_temp_dwid\" class=\"divinput\"><table width=\"98%\" cellpadding=\"0\" border=\"0\"><tbody><tr><td width=\"100%\"><input  class=\"inputs\" style=\"width:99%\" value=\"\" readonly=\"\" type=\"text\" name=\"permittype\"></td><td nowrap=\"\"><a href=\"javascript:;\"  class=\"webbtn\" data-toggle=\"modal\" data-target=\"#myModal\">选择</a></td></tr></tbody></table></span>";
+//        $str="<span id=\"div_temp_dwid\" class=\"divinput\"><table width=\"98%\" cellpadding=\"0\" border=\"0\"><tbody><tr><td width=\"100%\"><input  class=\"inputs\" style=\"width:99%\" value=\"\" readonly=\"\" type=\"text\" name=\"permittype\"></td><td nowrap=\"\"><a href=\"javascript:;\"  class=\"webbtn\" id=\"permit\">选择</a></td></tr></tbody></table></span>";
+        return $str;
+    }
+}
 			

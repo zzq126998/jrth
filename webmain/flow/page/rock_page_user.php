@@ -25,7 +25,6 @@ $(document).ready(function(){
             //console.log(val);
             $("#myModal").hide();
             $(".modal-backdrop").hide();
-
             var id=0;
             if(lx==1)id=a.changeid;
             if(val == 1){

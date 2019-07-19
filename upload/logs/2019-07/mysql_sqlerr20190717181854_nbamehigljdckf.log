@@ -1,0 +1,52 @@
+[ERROR SQL]
+ALTER TABLE `xinhu_tjnews` ADD `adate`  date DEFAULT '{date}' COMMENT '一级出生年月'
+
+[Reason]
+mysqliError:Invalid default value for 'adate'
+
+[URL]
+http://xinhu.cc/index.php?a=publicsave&m=flow&d=main&ajaxbool=true&rnd=270428
+
+[POST]
+[id]:0
+[name]:一级出生年月
+[fields]:adate
+[fieldss]:
+[fieldstype]:date
+[dev]:{date}
+[iszb]:0
+[lens]:0
+[data]:
+[attr]:
+[placeholder]:
+[gongsi]:
+[savewhere]:
+[sort]:0
+[isalign]:0
+[islu]:1
+[isbt]:0
+[iszs]:0
+[islb]:0
+[ispx]:0
+[issou]:0
+[istj]:0
+[isonly]:0
+[isdr]:0
+[otherfields]:mid=97
+[tablename_postabc]:wm0dmw0dqm0ddh0dmm0tw0iv0dmh0wh0vd0hy0ddy0wm0hv0if0th014
+[submitfields_postabc]:bmFtZSxmaWVsZHMsZmllbGRzdHlwZSxkZXYsc2F2ZXdoZXJlLHBsYWNlaG9sZGVyLHNvcnQsaXN0aixpc3B4LGlzYWxpZ24saXNzb3UsaXNsdSxpc2xiLGlzYnQsaXN6cyxkYXRhLGlzemIsYXR0cixsZW5zLGdvbmdzaSxpc29ubHksaXNkcg::
+[aftersaveaction]:elemensavefields
+[beforesaveaction]:elemensavefieldsbefore
+[editrecord_postabc]:false
+[sysmodenumabc]:
+[sys_signature]:63b99f603475ebea07e3c4b1e3d3de46
+[sys_timeature]:1563358732
+
+[IP]
+127.0.0.1
+
+[datetime]
+2019-07-17 18:18:54
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36

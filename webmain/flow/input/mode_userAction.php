@@ -144,5 +144,6 @@ class mode_userClassAction extends inputAction{
 		m('admin')->updateinfo(); //更新
 		return 'ok';
 	}
+
 }	
 			
