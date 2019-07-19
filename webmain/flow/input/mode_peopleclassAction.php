@@ -13,7 +13,7 @@ class mode_peopleclassClassAction extends inputAction{
 	*	return array('msg'=>'错误提示内容','rows'=> array()) 可返回空字符串，或者数组 rows 是可同时保存到数据库上数组
 	*/
 	protected function savebefore($table, $arr, $id, $addbo){
-		
+		var_dump($arr);exit;
 	}
 	
 	/**

@@ -59,6 +59,7 @@ class inputAction extends Action
 		$isflow			= (int)$this->moders['isflow'];
 		$flownum		= $this->moders['num'];
 		$table			= $this->moders['table'];
+
 		$sysisturn		= (int)$this->post('istrun','1');
 		$checkobj		= c('check');
 		if($this->isempt($table))$this->backmsg('模块未设置表名');
@@ -70,7 +71,7 @@ class inputAction extends Action
 		
 		$db	   = m($table);$subna = '提交';$addbo = false;$where = "`id`='$id'"; $oldrs = false;
 		$this->mdb = $db;
-		
+
 		if($id==0){
 			$where = '';
 			$addbo = true;
@@ -157,7 +158,7 @@ class inputAction extends Action
 			if(in_array('createid', $allfields))$uaarr['createid'] = $this->adminid;
 			if(in_array('createname', $allfields))$uaarr['createname'] = $this->adminname;
 		}
-		
+
 		//保存公司的
 		if(in_array('comid', $allfields)){
 			if($addbo)$uaarr['comid'] = m('admin')->getcompanyid();
@@ -241,7 +242,7 @@ class inputAction extends Action
 				$this->savesubtable($tablessas, $id, $zbx, $addbo);
 			}
 		}
-		
+
 		//保存后处理
 		$this->saveafter($table,$this->getsavenarr($uaarr, $oldrs), $id, $addbo);
 		
@@ -270,12 +271,12 @@ class inputAction extends Action
 	{
 		$arr 	= array();
 		$oi 	= (int)$this->post('sub_totals'.$xu.'');
-		if($oi<=0)return $arr;
+//		if($oi<=0)return $arr;
 		$modeid		= $this->moders['id'];
 		$iszb		= $xu+1;
 		$farr		= m('flow_element')->getrows("`mid`='$modeid' and `islu`=1 and `iszb`=$iszb",'`name`,`fields`,`isbt`,`fieldstype`,`savewhere`,`dev`,`data`','`sort`');
 		$sort 		= 0;
-		for($i=0; $i<$oi; $i++){
+		for($i=0; $i<=$oi; $i++){
 			$sid  = (int)$this->post('sid'.$xu.'_'.$i.'');
 			$bos  = true;
 			$uaarr['id'] = $sid;
@@ -284,10 +285,10 @@ class inputAction extends Action
 				$flx= $rs['fieldstype'];
 				if(substr($fid,0,5)=='temp_')continue;
 				$na = ''.$fid.''.$xu.'_'.$i.'';
+
 				$val= $this->post($na);
 				if($rs['isbt']==1&&$this->isempt($val))$bos=false;
 				$uaarr[$fid] = $val;
-				
 				if(substr($flx,0,6)=='change' && !isempt($rs['data'])){
 					$na = ''.$rs['data'].''.$xu.'_'.$i.'';
 					$val= $this->post($na);
@@ -296,9 +297,12 @@ class inputAction extends Action
 			}
 			if(!$bos)continue;
 			$uaarr['sort'] 	= $sort;
+
 			$sort++;
 			$arr[] = $uaarr;
 		}
+//        var_dump("++++++++++++++++++++++");
+//        var_dump($arr);exit;
 		return $arr;
 	}
 	
@@ -310,8 +314,8 @@ class inputAction extends Action
 		$len 		= count($data);
 		$idss		= '0';
 		$whes 		= '';
-
 		$allfields 	= $this->db->getallfields('[Q]'.$tables.'');
+//        var_dump($data);exit;
 		$oarray 	= array();
 		if(in_array('optdt', $allfields))$oarray['optdt'] 		= $this->now;
 		if(in_array('optid', $allfields))$oarray['optid'] 		= $this->adminid;
@@ -323,20 +327,21 @@ class inputAction extends Action
 			$oarray['sslx']	= $xu;
 			$whes			= ' and `sslx`='.$xu.'';
 		}
-		
+
 		if(in_array('comid', $allfields))$oarray['comid'] 		= $this->companyid;
-		
+
 		if($data)foreach($data as $k=>$uaarr){
 			$sid 			= $uaarr['id'];
 			$where			= "`id`='$sid'";
 			$uaarr['mid'] 	= $mid;
 			if($sid==0)$where = '';
 			foreach($oarray as $k1=>$v1)$uaarr[$k1]=$v1;
-			
+
 			$dbs->record($uaarr, $where);
 			if($sid==0)$sid = $this->db->insert_id();
 			$idss.=','.$sid.'';
 		}
+
 		$delwhere = "`mid`='$mid'".$whes." and `id` not in($idss)";
 		$dbs->delete($delwhere);
 	}

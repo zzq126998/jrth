@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cd3a6375-37e8-4a80-8df7-326102988ea2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmain/flow/input/inputAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/input/inputAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webmain/flow/input/inputjs/mode_jsuser.js" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/input/inputjs/mode_jsuser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webmain/flow/input/mode_userAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/input/mode_userAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmain/flow/input/mode_peopleclassAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/input/mode_peopleclassAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webmain/flow/page/input_jsuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/page/input_jsuser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webmain/flow/page/input_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/page/input_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webmain/flow/page/rock_page_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/webmain/flow/page/rock_page_user.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,41 +20,42 @@
     <session id="-1151151794">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="7" />
-          <entry key="js" value="7" />
-          <entry key="php" value="8" />
+          <entry key="html" value="8" />
+          <entry key="js" value="8" />
+          <entry key="php" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="7" />
-          <entry key="JavaScript" value="7" />
-          <entry key="PHP" value="8" />
+          <entry key="HTML" value="8" />
+          <entry key="JavaScript" value="8" />
+          <entry key="PHP" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="606" />
-          <entry key="js" value="185" />
-          <entry key="php" value="344" />
+          <entry key="html" value="642" />
+          <entry key="js" value="395" />
+          <entry key="php" value="575" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="609" />
-          <entry key="JavaScript" value="185" />
-          <entry key="PHP" value="341" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="645" />
+          <entry key="JavaScript" value="394" />
+          <entry key="PHP" value="572" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webmain/flow/page/input_jsuser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="2" column="59" lean-forward="true" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+            <state relative-caret-position="819">
+              <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#table#3;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#4;n#!!top" expanded="true" />
@@ -62,28 +64,65 @@
                 <element signature="n#style#0;n#td#0;n#tr#6;n#tbody#0;n#table#4;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#3;n#tr#6;n#tbody#0;n#table#4;n#!!top" expanded="true" />
                 <element signature="e#8677#8684#1" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputAction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1665">
+              <caret line="318" column="30" lean-forward="true" selection-start-line="318" selection-start-column="30" selection-end-line="318" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="548">
+              <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
+              <folding>
+                <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="48" column="129" selection-start-line="48" selection-start-column="129" selection-end-line="48" selection-end-column="129" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="684">
+              <caret line="31" column="31" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webmain/flow/page/rock_page_user.php">
+        <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12270">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+            <state relative-caret-position="380">
+              <caret line="145" column="5" lean-forward="true" selection-start-line="94" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/res/js/inputs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="58" column="42" selection-start-line="57" selection-start-column="24" selection-end-line="58" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -91,40 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_jsuser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_kqdkjl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_knowledge.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_demo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
+            <state relative-caret-position="423">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -145,7 +152,20 @@
       <find>setup</find>
       <find>change</find>
       <find>Items</find>
+      <find>click</find>
+      <find>moneycn</find>
+      <find>attr</find>
       <find>selProvince</find>
+      <find>执照类型</find>
+      <find>modal-footer</find>
+      <find>savebefore</find>
+      <find>sub_totals</find>
+      <find>zbshu</find>
+      <find>$this-&gt;moders</find>
+      <find>var_dump</find>
+      <find>getsubtabledata</find>
+      <find>savesubtable</find>
+      <find>var</find>
     </findStrings>
     <dirStrings>
       <dir>D:\myphp_www\PHPTutorial\WWW\jrthtest\jrth\webmain\flow\input</dir>
@@ -165,8 +185,11 @@
         <option value="$PROJECT_DIR$/webmain/flow/input/mode_userAction.php" />
         <option value="$USER_HOME$/Desktop/通航信息网/新建文本文档 (3).html" />
         <option value="$PROJECT_DIR$/webmain/flow/input/inputjs/mode_jsuser.js" />
-        <option value="$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php" />
         <option value="$PROJECT_DIR$/webmain/flow/page/input_jsuser.html" />
+        <option value="$PROJECT_DIR$/webmain/flow/input/mode_peopleclassAction.php" />
+        <option value="$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html" />
+        <option value="$PROJECT_DIR$/webmain/flow/input/inputAction.php" />
+        <option value="$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php" />
       </list>
     </option>
   </component>
@@ -197,6 +220,16 @@
             <path>
               <item name="jrth" type="b2602c69:ProjectViewProjectNode" />
               <item name="jrth" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jrth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jrth" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jrth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jrth" type="462c0819:PsiDirectoryNode" />
               <item name="webmain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -211,13 +244,6 @@
               <item name="webmain" type="462c0819:PsiDirectoryNode" />
               <item name="flow" type="462c0819:PsiDirectoryNode" />
               <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jrth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jrth" type="462c0819:PsiDirectoryNode" />
-              <item name="webmain" type="462c0819:PsiDirectoryNode" />
-              <item name="flow" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jrth" type="b2602c69:ProjectViewProjectNode" />
@@ -266,7 +292,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23235000" />
+    <option name="totallyTimeSpent" value="32452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -284,7 +310,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.17984831" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -320,9 +346,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webmain/home/desktop/items_about.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/webmain/home/desktop/items_kqtotal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-221" />
@@ -388,13 +411,6 @@
             <element signature="e#1313#1319#0" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -465,13 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -554,16 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5256">
-          <caret line="146" selection-start-line="146" selection-end-line="146" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webmain/model/flow/flow.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4074">
@@ -691,13 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_knowledge.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_kqdkjl.js">
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_demo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="2016">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -708,41 +697,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_demo.js">
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_knowledge.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_kqdkjl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
+        <state relative-caret-position="108">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webmain/flow/page/rock_page_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12270">
+        <state relative-caret-position="-12587">
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputjs/mode_jsuser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state relative-caret-position="423">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php">
+    <entry file="file://$PROJECT_DIR$/web/res/js/inputs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="48" column="129" selection-start-line="48" selection-start-column="129" selection-end-line="48" selection-end-column="129" />
+        <state relative-caret-position="144">
+          <caret line="58" column="42" selection-start-line="57" selection-start-column="24" selection-end-line="58" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_userAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="145" column="5" lean-forward="true" selection-start-line="94" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_yymenuAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/tpl_input_lu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webmain/flow/page/input_jsuser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" column="59" lean-forward="true" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="819">
+          <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#table#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#4;n#!!top" expanded="true" />
@@ -751,7 +764,36 @@
             <element signature="n#style#0;n#td#0;n#tr#6;n#tbody#0;n#table#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#tr#6;n#tbody#0;n#table#4;n#!!top" expanded="true" />
             <element signature="e#8677#8684#1" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/inputAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="318" column="30" lean-forward="true" selection-start-line="318" selection-start-column="30" selection-end-line="318" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_peopleclassAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webmain/flow/input/mode_jsuserAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
