@@ -23,8 +23,22 @@ function initbodys(){
         var s3Val = $('#s3 option:selected').val();
         var s4Val = $('#s4 option:selected').val();
         var s5Val = $('#s5 option:selected').val();
-        $("#credentialsType").val(s1Val +"-"+ s2Val+"-"+ s3Val+"-"+ s4Val+"-"+ s5Val);
-       console.log(156465)
+        if(s1Val == "-请选择-" || s2Val == "-请选择-" || s3Val == "-请选择-" || s4Val == "-请选择-" || s5Val == "-请选择-"){
+            console.log(51111);
+            alert("请确认已选择完");
+            return false;
+        }
+        $('#myModal').hide();
+        $('#myModal').attr('class','modal fade ');
+        $('#bjblock').attr('class','');
+        var val1,val2,val3,val4,val5;
+        if(s1Val == "暂无数据"){val1 = "";} else {val1 = s1Val;}
+        if(s2Val == "暂无数据"){val2 = "";} else {val2 = s2Val;}
+        if(s3Val == "暂无数据"){val3 = "";} else {val3 = s3Val;}
+        if(s4Val == "暂无数据"){val4 = "";} else {val4 = s4Val;}
+        if(s5Val == "暂无数据"){val5 = "";} else {val5 = s5Val;}
+
+        $("#credentialsType").val(val1 +"-"+ val2+"-"+ val3+"-"+ val4+"-"+ val5);
     });
 
 
