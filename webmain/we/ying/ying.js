@@ -279,6 +279,7 @@ var myScroll=false,yy={
 			js.location(d.xiangurl+'&show=we');
 			return;
 		}
+
 		var ids = d.id,nus=d.modenum,modne=d.modename;
 		if(!ids)return;
 		if(!nus||nus=='undefined')nus = this.num;

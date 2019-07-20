@@ -110,6 +110,7 @@ function openinput(name,num, id,cbal){
 }
 function openxiangs(name,num,id,cbal){
 	if(!id)id=0;
+	
 	if(!cbal)cbal='';
 	var url = 'task.php?a=p&num='+num+'&mid='+id+'';
 	var jg  = num.indexOf('?')>-1 ? '&' : '?';

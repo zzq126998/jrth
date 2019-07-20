@@ -141,6 +141,7 @@ class modeClassAction extends ActionNot
 	//邮件上打开详情
 	public function aAction()
 	{
+		
 		$num = $this->get('num');
 		$mid = $this->get('mid');
 		$act = 'p';

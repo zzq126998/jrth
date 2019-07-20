@@ -34,6 +34,7 @@ class htmlChajian extends Chajian{
 	
 	public function createtable($fields, $arr, $title='',$lx='',$bcolor='')
 	{
+		// var_dump($fields);exit;
 		if(isempt($bcolor))$bcolor = '#cccccc';
 		if($lx=='print'){
 			$bcolor = '#000000';
@@ -43,10 +44,15 @@ class htmlChajian extends Chajian{
 		if($title != ''){
 			$s .= '<tr><td colspan="2" align="center" style="border:1px '.$bcolor.' solid;padding:10px;font-size:16px;background:#D2E9FF;">'.$title.'</td></tr>';
 		}
+		if(isset($arr["peoid"]) && $arr["peoid"]=="运营类"){
+			 unset($fields["subdata0"]);
+			 unset($fields["subdata1"]);
+		}	
 		foreach($fields as $fid=>$na){
 			$val = '';
 			$sty = 'padding:8px;';
 			if(isset($arr[$fid]))$val = $arr[$fid];
+
 			if(isset($arr[$fid.'_style']))$sty .= $arr[$fid.'_style'];
 			$s .= '<tr><td align="right" nowrap style="border:1px '.$bcolor.' solid;padding:5px 8px;">'.$na.'</td><td  style="border:1px '.$bcolor.' solid;'.$sty.'" align="left">'.$val.'</td></tr>';
 		}

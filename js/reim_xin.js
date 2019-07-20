@@ -629,6 +629,7 @@ var reim={
 		});
 	},
 	openchat:function(type,reid,na,fac){
+		
 		var num = ''+type+'_'+reid+'';
 		$('#chat_stotal_'+num+'').html('');
 		this.showbadge('chat');

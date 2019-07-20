@@ -179,6 +179,8 @@ $(document).ready(function(){
 				}
 			}
 			if(isflow>0)d.push({text:'状态',dataIndex:'statustext'});
+            console.log(6666);
+			console.log(nstr.indexOf(',caozuo,'));
 			if(nstr=='' || nstr.indexOf(',caozuo,')>=0)d.push({text:'',dataIndex:'caozuo',callback:'opegs{rand}'});
 			if(!bots){
 				bootparams.columns=d;
