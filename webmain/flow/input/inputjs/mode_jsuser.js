@@ -38,7 +38,11 @@ function initbodys(){
         if(s4Val == "暂无数据"){val4 = "";} else {val4 = s4Val;}
         if(s5Val == "暂无数据"){val5 = "";} else {val5 = s5Val;}
 
-        $("#credentialsType").val(val1 +"-"+ val2+"-"+ val3+"-"+ val4+"-"+ val5);
+        if(val5 == ""){
+            $("#credentialsType").val(val1 +"-"+ val2+"-"+ val3+"-"+ val4);
+        }else{
+            $("#credentialsType").val(val1 +"-"+ val2+"-"+ val3+"-"+ val4+"-"+ val5);
+        }
     });
 
 
