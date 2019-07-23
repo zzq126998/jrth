@@ -116,7 +116,7 @@ class htmlChajian extends Chajian{
 					if($k==$rlen-1)$stls.=';border-bottom:none';
 				}
 				$val 	 = isset($rs[$head[$h][0]]) ? $rs[$head[$h][0]] : '';
-				$txt.= '<td style="'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
+				$txt.= '<td style="width: 50%;'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
 				$txt	.= '<td style="'.$stls.'" align="'.$head[$h][2].'">'.$val.'</td>';
 				$txt	.= '</tr>';
 			}	

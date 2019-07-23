@@ -754,6 +754,13 @@
 			d = this.getData(oi);
 			num=can.modenum;if(num=='')num=this.tablename;
 			mid = d.id;if(d.modenum)num=d.modenum;
+            if(d.peoid){
+                if(d.peoid=="运营类"){
+                    num="user";
+                }else if(d.peoid=="技术类"){
+                    num="jsuser";
+                }
+            }
 			modename=can.modename;if(d.modename)modename=d.modename;
 			new optmenuclass(o1,num,mid,this,modename,oi,can.columns[oj]);
 		};
