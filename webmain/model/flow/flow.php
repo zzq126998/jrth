@@ -742,7 +742,9 @@ class flowModel extends Model
 	public function getdataedit()
 	{
 		$fobj 			= m('file');
+
 		$arr['data'] 	= $this->flowrsreplaceedit($this->rssust);
+		
 		$arr['table'] 	= $this->mtable;
 		$arr['tables'] 	= $this->moders['tables'];
 		$arr['modeid'] 	= $this->modeid;
@@ -784,6 +786,7 @@ class flowModel extends Model
 		$ztarr 			= $this->getnowstatus();
 		$arr['statustext'] 	= $ztarr[0];
 		$arr['statuscolor'] = $ztarr[1];
+
 		return $arr;
 	}
 	

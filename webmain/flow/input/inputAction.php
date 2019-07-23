@@ -283,14 +283,11 @@ class inputAction extends Action
     {
         $arr = array();
         $oi = (int)$this->post('sub_totals' . $xu . '');
-//		if($oi<=0)return $arr;
+		if($oi<=0)return $arr;
         $modeid = $this->moders['id'];
         $iszb = $xu + 1;
         $farr = m('flow_element')->getrows("`mid`='$modeid' and `islu`=1 and `iszb`=$iszb", '`name`,`fields`,`isbt`,`fieldstype`,`savewhere`,`dev`,`data`', '`sort`');
         $sort = 0;
-		if($oi>0){
-            $oi=$oi-1;
-        }
 		for($i=0; $i<=$oi; $i++){
 			$sid  = (int)$this->post('sid'.$xu.'_'.$i.'');
 			$bos  = true;
@@ -300,7 +297,6 @@ class inputAction extends Action
 				$flx= $rs['fieldstype'];
 				if(substr($fid,0,5)=='temp_')continue;
 				$na = ''.$fid.''.$xu.'_'.$i.'';
-
 				$val= $this->post($na);
 				if($rs['isbt']==1&&$this->isempt($val))$bos=false;
 				$uaarr[$fid] = $val;
@@ -364,9 +360,11 @@ class inputAction extends Action
 	//获取数据
 	public function getdataAjax()
 	{
+
 		$flownum = $this->request('flownum');
 		$id		 = (int)$this->request('mid');
 		$arr 	 = m('flow')->getdataedit($flownum, $id);
+
 		$this->backmsg('', '', $arr);
 	}
 	
@@ -580,13 +578,13 @@ class inputAction extends Action
 			
 			$course[]= array('name'=>'结束','id'=>-1);
 		}
+
 		$this->title  					= $this->flow->inputtitle();//录入页面的标题
 		$this->smartydata['content']	= $content;
 		$this->smartydata['gongsiarr']	= $this->gongsiarr;
 		$this->smartydata['subfielsa']	= $this->subfielsa;
 		$this->smartydata['mid']		= $mid;
 		$this->smartydata['isflow']		= $isflow;
-		
 		$this->smartydata['zbnamearr']	= $nameaas;
 		$this->smartydata['zbshu']		= $zbshu;//子表数
 		$this->smartydata['isupfile']	= $isupfile;//是否有上传
