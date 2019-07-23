@@ -487,6 +487,7 @@ js.getformdata=function(nas){
 	return da;
 }
 js.getdata = function(na,da){
+
 	if(!da)da={};
 	var obj	= $('#'+na+'');
 	var inp	= obj.find('input,select');

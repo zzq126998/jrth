@@ -7,6 +7,7 @@ return array(
 	'title'		=> '信呼协同办公系统',	//系统默认标题
 	'apptitle'	=> '信呼OA',			//APP上或PC客户端上的标题
 	'db_host'	=> '182.61.51.112',		//数据库地址
+//	'db_host'	=> '127.0.0.1',		//数据库地址
 	'db_user'	=> 'root',		//数据库用户名
 	'db_pass'	=> 'root',		//数据库密码
 	'db_base'	=> 'rockxinhu',		//数据库名称
