@@ -36,13 +36,12 @@ class flow_jsuserClassModel extends flowModel
 			$where.= " and instr(`deptpath`,'[$detpid]')>0";
 		}
 		return array(
-			'fields'=> '`name`,`id`,`id` as uid,`face`,`sort`,`deptallname`,deptpath,`ranking`,`tel`,`mobile`,`email`,`user`,num,workdate,sex,deptname,deptnames,superman,status,type,online,lastonline,isvcard',
+			'fields'=> '`name`,`id`,`id` as uid,`face`,`sort`,`deptallname`,deptpath,`ranking`,`tel`,`mobile`,`email`,`user`,num,workdate,sex,deptname,deptnames,superman,status,type,online,lastonline,isvcard,peoid',
 			'order' => 'sort',
 			'where' => $where
 		);
 	}
-	
-	
+
 	//替换
 	public function flowrsreplace($rs, $lx=0)
 	{

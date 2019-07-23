@@ -230,6 +230,7 @@ class flowModel extends Model
 		}
 		
 		$this->rs 		= $this->getone($swhere);
+		
 		$this->uname	= '';
 		if(!$this->rs)$this->echomsg('数据记录不存在了');
 		$this->rs['base_name'] 		= '';
@@ -490,13 +491,13 @@ class flowModel extends Model
 		$data			= $dataa[0];
 		
 		//读取多行子表
-		$subdata 		= $this->getsuballdata(1);
+		$subdata= $this->getsuballdata(1);
 		foreach($subdata as $zb=>$da){
 			$sub 						= $da['fields'];
 			$data[$sub] 				= $this->getsubdata($zb,$da['data'],arrvalue($data,'subdatays'.$zb.'',$lx));
 			$data[''.$sub.'_style'] 	= 'padding:0';
 		}
-		
+	
 		//文件字段替换上传和上传图片的
 		foreach($this->fieldsarra as $k=>$rs){
 			$fid 	= $rs['fields'];
@@ -563,6 +564,7 @@ class flowModel extends Model
 			$contview 	 = $this->flowviewtpl(file_get_contents($path), $lx);
 			$contview 	 	= $this->rock->reparr($contview, $data);
 		}
+
 		$arr['isdefaultview'] = 0;
 		if($this->isempt($contview) || contain($contview, '$contview$')){
 			$arr['isdefaultview'] = 1;
@@ -572,6 +574,7 @@ class flowModel extends Model
 				$_fields['base_name'] 		= '申请人';
 				$_fields['base_deptname'] 	= '申请人部门';
 			}
+
 			$fields			 = array_merge($_fields, $this->getfields($lx));
 			if($fstr!='')$fields['file_content'] 			= '相关文件';
 			foreach($subdata as $zb=>$da){
@@ -583,6 +586,7 @@ class flowModel extends Model
 			if($lx==0)foreach($fields as $k=>$rs){$data[''.$k.'_style'] = 'width:75%';break;}
 			$_colsr		= $this->xiangbordercolor;
 			if($_colsr=='')$_colsr = getconfig('bcolorxiang');
+			
 			$contvimr 	= c('html')->xiangtable($fields, $data, $_colsr);
 			$contvimr 	= '<div align="center">'.$contvimr.'</div>';
 			
@@ -677,6 +681,7 @@ class flowModel extends Model
 	//$lx=0PC，1移动
 	private function getsubdata($xu, $rows, $lx=0)
 	{
+
 		$iscz			= 0;
 		$iszb			= $xu+1;
 		$fields			= 'subdata'.$xu.'';
@@ -3263,6 +3268,7 @@ class flowModel extends Model
 				$rows[$k]['statustext'] = $this->getstatusstr($rs);
 			}
 		}
+
 		$cont 	 	= c('html')->createrows($rows, substr($headstr, 1),'#cccccc','noborder');
 		return $cont;
 	}
