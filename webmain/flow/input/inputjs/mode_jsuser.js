@@ -61,7 +61,7 @@ function changesubmit(d){
    if(!d.num0_4)return '执照编号不能为空';
    if(!d.name0_4)return '执照姓名不能为空';
    if(!d.nationality0_4)return '执照国籍不能为空';
-   if(!d.age1_10)return '请选择体检信息报告';
+   if(!d.age1_10)return '请选择合格证类型';
    if(d.age1_10==1){
        if(!d.anum1_10)return '一级体检编号为空';
        if(!d.aname1_10)return '一级姓名为空';
