@@ -24,6 +24,7 @@
 		}
 		if(lx=='ok'){
 			if(!txt)txt='处理成功';
+            // txt='你大爷';
 			s+='<div style="font-size:40px">✔</div>';
 			s+='<div>'+txt+'</div>';
 		}
@@ -39,6 +40,7 @@
 		$('#rockmodelmsg').css('left',''+le+'px');
 		$.rockmodelmsgtime = setTimeout(function(){
 			$('#rockmodelmsg').remove();
+			$('.modal-backdrop').remove();
 			fun();
 		}, sj*1000);
 	}

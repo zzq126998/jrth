@@ -1,6 +1,7 @@
 //流程模块【jsuser.技术类人员】下录入页面自定义js页面,初始函数
 
 function initbodys(){
+
     $('#permit').click(function(){
         $('#myModal').show();
         $('#myModal').attr('class','modal fade in');
@@ -44,6 +45,40 @@ function initbodys(){
             $("#credentialsType").val(val1 +"-"+ val2+"-"+ val3+"-"+ val4+"-"+ val5);
         }
     });
-
+    $(form('age1_10')).change(function(res){
+        var val = this.value;
+        if(val=='')return;
+    });
+    // $('#AltS').click(function(){
+    //    var val=form('age1_10').value
+    //     if(val=='')return false;
+    //     console.log(val);return
+    // });
 
 }
+function changesubmit(d){
+   // if(!d.permittype)return '请选择执照类型';
+   if(!d.num0_4)return '执照编号不能为空';
+   if(!d.name0_4)return '执照姓名不能为空';
+   if(!d.nationality0_4)return '执照国籍不能为空';
+   if(!d.age1_10)return '请选择体检信息报告';
+   if(d.age1_10==1){
+       if(!d.anum1_10)return '一级体检编号为空';
+       if(!d.aname1_10)return '一级姓名为空';
+       if(!d.anationality1_10)return '一级国籍不能为空';
+       if(!d.alimit1_10)return '一级限制选项不能为空';
+   }
+    if(d.age1_10==2){
+        if(!d.bnum1_10)return '二级体检编号为空';
+        if(!d.bname1_10)return '二级姓名为空';
+        if(!d.bnationality1_10)return '二级国籍不能为空';
+        if(!d.blimit1_10)return '二级限制选项不能为空';
+    }
+}
+//4、保存提交成功触发
+function savesuccess(){
+    alert('111111111');
+    $('.modal-backdrop').attr('class','');
+    $($('.modal-backdrop')[0]).remove();
+    $(".modal-backdrop").hide();
+};
