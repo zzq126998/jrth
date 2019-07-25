@@ -106,6 +106,16 @@ class htmlChajian extends Chajian{
 		// $txt	.= '</tr>';
 		foreach($rows as $k=>$rs){
 			$rs['xuhaos'] = $k+1;
+            if($head[1][0]=="physicalprove"){//是否存在证件类型字段
+                if($rs["physicalprove"]==1){//证件类型为一级，取消二级显示
+                    array_splice($head,10,8);
+                    $thead		= count($head);
+                }
+                if($rs["physicalprove"]==2){//证件类型为二级，取消一级显示
+                    array_splice($head,2,8);
+                    $thead		= count($head);
+                }
+            }
 			for($h=1; $h<$thead; $h++){
 				$txt	.= '<tr>';
 				$stls= $style;
@@ -115,24 +125,21 @@ class htmlChajian extends Chajian{
 					if($h==$lens)$stls.=';border-right:none';
 					if($k==$rlen-1)$stls.=';border-bottom:none';
 				}
-
 				$val 	 = isset($rs[$head[$h][0]]) ? $rs[$head[$h][0]] : '';
-				if($head[$h][0]=="physicalprove"){
-
-				    if($val==1){
-				        $val="一级体检";
-				    }elseif ($val==2){
+				$txt.= '<td style="width: 50%;'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
+                if($head[$h][0]=="physicalprove"){
+                    if($val==1){
+                        $val="一级体检";
+                    }elseif ($val==2){
                         $val="二级体检";
                     }else {
                         $val="其他";
                     }
                 }
-				$txt.= '<td style="width: 50%;'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
 				$txt	.= '<td style="'.$stls.'" align="'.$head[$h][2].'">'.$val.'</td>';
 				$txt	.= '</tr>';
 			}	
-			
-			
+
 		}
 		$txt	.= '</table>';
 		return $txt;
