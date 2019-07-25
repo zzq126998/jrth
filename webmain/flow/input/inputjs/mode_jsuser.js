@@ -61,18 +61,26 @@ function changesubmit(d){
    if(!d.num0_4)return '执照编号不能为空';
    if(!d.name0_4)return '执照姓名不能为空';
    if(!d.nationality0_4)return '执照国籍不能为空';
-   if(!d.age1_10)return '请选择合格证类型';
-   if(d.age1_10==1){
+   if(!d.physicalprove1_10)return '请选择合格证类型';
+   if(d.physicalprove1_10==1){
        if(!d.anum1_10)return '一级体检编号为空';
        if(!d.aname1_10)return '一级姓名为空';
+       if(!d.asex1_10)return '一级性别选项不能为空';
+       if(!d.adate1_10)return '一级出生年月不能为空';
        if(!d.anationality1_10)return '一级国籍不能为空';
        if(!d.alimit1_10)return '一级限制选项不能为空';
+       if(!d.adateissue1_10)return '一级发证日期项不能为空';
+       if(!d.atermvalidity1_10)return '一级有效期不能为空';
    }
-    if(d.age1_10==2){
+    if(d.physicalprove1_10==2){
         if(!d.bnum1_10)return '二级体检编号为空';
         if(!d.bname1_10)return '二级姓名为空';
+        if(!d.bsex1_10)return '二级性别选项不能为空';
+        if(!d.bdate1_10)return '二级出生年月不能为空';
         if(!d.bnationality1_10)return '二级国籍不能为空';
         if(!d.blimit1_10)return '二级限制选项不能为空';
+        if(!d.bdateissue1_10)return '二级发证日期项不能为空';
+        if(!d.btermvalidity1_10)return '二级有效期不能为空';
     }
 }
 //4、保存提交成功触发
