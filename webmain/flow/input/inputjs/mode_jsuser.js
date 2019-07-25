@@ -69,6 +69,7 @@ function changesubmit(d){
        if(!d.adate1_10)return '一级出生年月不能为空';
        if(!d.anationality1_10)return '一级国籍不能为空';
        if(!d.alimit1_10)return '一级限制选项不能为空';
+       
        if(!d.adateissue1_10)return '一级发证日期项不能为空';
        if(!d.atermvalidity1_10)return '一级有效期不能为空';
    }
