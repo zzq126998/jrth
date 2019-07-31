@@ -55,7 +55,6 @@ class xinhuapiChajian extends Chajian{
 	*/
 	public function getdata($mod, $act, $can=array())
 	{
-		
 		$url 	= $this->geturlstr($mod, $act, $can);
 		$cont 	= c('curl')->getcurl($url);
 		if(!isempt($cont) && contain($cont, 'success')){

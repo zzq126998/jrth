@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--会话聊天界面左边聊天的-->
+<RelativeLayout  
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="15dp">
+    <TextView
+        android:id="@+id/xu"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+  <ImageView
+      android:id="@+id/icons"
+      android:layout_centerVertical="true"
+      android:layout_width="@dimen/facesizechat"
+      android:layout_height="@dimen/facesizechat"
+      android:layout_alignParentLeft="true"
+      android:layout_marginLeft="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp"
+      android:layout_alignParentTop="true"
+      android:src="@drawable/noface" />
+
+  <TextView
+      android:id="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/jian"
+      android:layout_alignParentTop="true"
+      android:layout_marginRight="70dp"
+      android:layout_marginTop="5dp"
+      android:textColor="@color/qipao_dt"
+      android:textSize="12dp"
+      android:text="他人(23:55:00)" />
+
+  <com.view.TextViewChat
+      android:id="@+id/content"
+      android:layout_below="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/jian"
+      android:layout_marginLeft="-1dp"
+      android:layout_marginRight="@dimen/chattoleftrig"
+      android:layout_marginTop="2dp"
+      android:textSize="@dimen/textsizechat"
+      android:padding="10dp"
+      android:background="@drawable/chat_left"
+      android:text="左边的聊天" />
+
+  <TextView
+      android:id="@+id/jian"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_toRightOf="@+id/icons"
+      android:layout_alignParentTop="true"
+      android:layout_marginLeft="0dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="10dp"
+      android:background="@drawable/chat_left_jian" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

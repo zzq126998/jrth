@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:background="#ffffff"
+    >
+
+    <LinearLayout
+        android:id="@+id/zhezhao"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/appnameval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/myicons"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center"
+
+            android:text="@string/app_name"
+            android:textColor="@color/mcolor"
+            android:textSize="40dp"
+            />
+
+        <com.view.ImageViewXinhu
+            android:id="@+id/myicons"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/icons512" />
+
+        <TextView
+            android:layout_below="@+id/myicons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="60dp"
+            android:textColor="#888888"
+            android:textSize="18dp"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/banquan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#cccccc"
+        android:gravity="center"
+        android:text="Copyright ©2018 信呼 www.rockoa.com"
+        android:visibility="visible"
+        android:textSize="14dp" />
+
+</RelativeLayout>

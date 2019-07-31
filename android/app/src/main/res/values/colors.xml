@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="topbg">#70000000</color>
+	<color name="mcolor">#1389D3</color><!-- 主颜色 -->
+	<color name="mcolors">#0D7EC4</color><!-- 按下按钮颜色-->
+	<color name="bgcolor">#f1f1f1</color><!-- 背景颜色 -->
+
+    <!-- 聊天气泡颜色 -->
+    <color name="qipao_dt">#bbbbbb</color>
+    <color name="qipao_right">#1689CC</color>
+    <color name="qipao_right_border">#1689CC</color>
+
+    <color name="qipao_left">#ffffff</color>
+    <color name="qipao_left_border">#ffffff</color>
+
+    <!-- 线条原色 -->
+    <color name="line">#30000000</color>
+
+    <!-- 线条应用 -->
+    <color name="line_ying">#20000000</color>
+
+    <color name="line2">#20000000</color>
+
+	
+	<color name="hui1">#888888</color>
+	<color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="green">#00FF00</color>
+    <color name="darkgreen">#33AA55</color>
+    <color name="lightgreen">#7CFC00</color>
+    <color name="lightgreen2">#11CC22</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#0000FF</color>
+    <color name="hui">#AAAAAA</color>
+    <color name="golden">#FFC000</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="gray">#F2F2F2</color>
+
+    <color name="skyblue">#0080ff </color>
+    <color name="lightblue">#00B0ff </color>
+    <color name="lightblue_hover">#0298D8 </color>
+    <color name="lightblue2">#223399</color>
+    <color name="darkblue">#222299 </color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorGray">#50000000</color>
+</resources>

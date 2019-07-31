@@ -28,7 +28,6 @@ class rockqueueChajian extends Chajian
 	*/
 	public function push($cont, $param=array(), $runtime=0)
 	{
-		
 		$type 	= 'cmd';
 		$url	= $cont;
 		if(substr($cont,0,4)=='http'){

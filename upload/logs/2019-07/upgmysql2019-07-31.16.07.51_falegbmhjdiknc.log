@@ -1,0 +1,20 @@
+[2019-07-31 16:07:51]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=901524
+CREATE TABLE `xinhu_wxqy_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` varchar(50) NOT NULL DEFAULT '',
+  `name` varchar(20) DEFAULT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `position` varchar(20) DEFAULT NULL,
+  `mobile` varchar(20) DEFAULT NULL,
+  `gender` varchar(5) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `weixinid` varchar(50) DEFAULT NULL COMMENT '保存快捷登录时DeviceId',
+  `status` tinyint(1) DEFAULT '0' COMMENT '状态@1|已关注,2|已冻结,4|未关注',
+  `avatar` varchar(300) DEFAULT NULL COMMENT '头像url',
+  `enable` tinyint(1) DEFAULT '1',
+  `optdt` datetime DEFAULT NULL,
+  `isleader` tinyint(1) DEFAULT '0' COMMENT '标示是否为上级',
+  `telephone` varchar(50) DEFAULT NULL COMMENT '电话',
+  `wxplugin_status` tinyint(1) DEFAULT '0' COMMENT '关注微信插件的状态',
+  PRIMARY KEY (`id`,`userid`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

@@ -225,7 +225,37 @@ if($stype!=''){
 			<?php 
 			}
 			
+			//--start--
+			if(
+				($da['arr']['isflow']==3 && $flowinfor['nowcourse']['id']>88888)
+				||
+				($da['arr']['isflow']==4 && isset($flowinfor['courserows']))
+			){
+				$str1 = '<tr height="40" style="display:none" id="sys_nextcoursediv0">';
+				$str1 .= '<td class="tdys1"><div align="right" style="color:#555555"><font color=red>*</font>下步处理</div></td>';
+				$str3 = '';
+				foreach($flowinfor['courserows'] as $k3=>$rs3)$str3.='<option changerange="'.$rs3['checktypeid'].'" value="'.$rs3['id'].'" checktype="'.$rs3['checktype'].'">'.$rs3['id'].'.'.$rs3['name'].'</option>';
+				$str1 .= '<td class="tdys1"><div align="left"><select onchange="c.changenextcourse(this,'.$da['arr']['isflow'].')" name="sys_nextcourseid" class="inputs"><option value="">-请选择-</option>';
+				if($da['arr']['isflow']==3)$str1 .= '<option value="0">结束流程</option>';
+				$str1 .= ''.$str3.'</select></div></td>';
+				$str1 .= '</tr>';
+				
+				
+				$str2 = $inputobj->inputchangeuser(array(
+					'name'		=>'sys_nextcoursename',
+					'id'		=>'sys_nextcoursenameid',
+					'placeholder'=>'选择下步处理人',
+					'type'		=> 'changeusercheck',
+					'title'		=> '选择下步处理人',
+				));
+				$str1 .= '<tr height="40" style="display:none" id="sys_nextcoursediv1">';
+				$str1 .= '<td class="tdys1"><div align="right" style="color:#555555"><font color=red>*</font>下步处理人</div></td>';
+				$str1 .= '<td class="tdys1"><div align="left">'.$str2.'</div></td>';
+				$str1 .= '</tr>';
+				echo $str1;
+			}
 			
+			//--end--
 			
 			
 			

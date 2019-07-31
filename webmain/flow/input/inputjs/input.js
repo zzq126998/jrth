@@ -574,17 +574,13 @@ var c={
 	showdataback:function(a){
 		if(a.success){
 			var da = a.data;
-
 			alldata= da;
-
 			js.setmsg();
 			var len = arr.length,i,fid,val,flx,ojb,j;
 			data=da.data;
-
 			for(i=0;i<len;i++){
 				fid=arr[i].fields;
 				flx=arr[i].fieldstype;
-				console.log(arr[i])
 				if(arr[i].islu=='1' && arr[i].iszb=='0' && fid.indexOf('temp_')!=0){
 					val=da.data[fid];
 					if(val==null)val='';
@@ -604,7 +600,6 @@ var c={
 						if(!isempt(fid)&&form(fid))form(fid).value=da.data[fid];
 					}else{
 						if(form(fid))form(fid).value=val;
-						
 					}
 				}
 			}
@@ -693,7 +688,6 @@ var c={
 				form('sub_totals'+i+'').value=o2.rows.length-1;
 				this.repaixuhao(i);
 				oba = o.find('tr:eq(1)').find('[name]');
-
 				for(j=0;j<oba.length;j++){
 					nas=oba[j].name;
 					nasa=nas.split('_');
@@ -768,7 +762,6 @@ var c={
 			return;
 		}
 		var o=$('#tablesub'+xu+'');
-
 		var oi = o2.rows.length-1,i,str='',oba,nas,oj,nna,ax2,d1,nass;
 		oi=1;
 		var cell = o2.rows[oi].cells.length;
@@ -786,13 +779,12 @@ var c={
 		}
 		form('sub_totals'+xu+'').value=(oj+1);
 		str=str.replace(/rockdatepickerbool=\"true\"/gi,'');
-		// o.append('<tr>'+str+'</tr>');
+		o.append('<tr>'+str+'</tr>');
 		d=js.apply({sid:'0'},d);
 		for(d1 in d){
 			ax2=d1+wux;
 			if(form(ax2))form(ax2).value=d[d1];
 		}
-
 		this.repaixuhao(xu);
 		this.initdatelx();
 		var nusa = [""+xu+"",""+oj+"",wux,nass,nna];

@@ -230,7 +230,6 @@ class flowModel extends Model
 		}
 		
 		$this->rs 		= $this->getone($swhere);
-		
 		$this->uname	= '';
 		if(!$this->rs)$this->echomsg('数据记录不存在了');
 		$this->rs['base_name'] 		= '';
@@ -491,13 +490,13 @@ class flowModel extends Model
 		$data			= $dataa[0];
 		
 		//读取多行子表
-		$subdata= $this->getsuballdata(1);
+		$subdata 		= $this->getsuballdata(1);
 		foreach($subdata as $zb=>$da){
 			$sub 						= $da['fields'];
 			$data[$sub] 				= $this->getsubdata($zb,$da['data'],arrvalue($data,'subdatays'.$zb.'',$lx));
 			$data[''.$sub.'_style'] 	= 'padding:0';
 		}
-	
+		
 		//文件字段替换上传和上传图片的
 		foreach($this->fieldsarra as $k=>$rs){
 			$fid 	= $rs['fields'];
@@ -564,7 +563,6 @@ class flowModel extends Model
 			$contview 	 = $this->flowviewtpl(file_get_contents($path), $lx);
 			$contview 	 	= $this->rock->reparr($contview, $data);
 		}
-
 		$arr['isdefaultview'] = 0;
 		if($this->isempt($contview) || contain($contview, '$contview$')){
 			$arr['isdefaultview'] = 1;
@@ -574,7 +572,6 @@ class flowModel extends Model
 				$_fields['base_name'] 		= '申请人';
 				$_fields['base_deptname'] 	= '申请人部门';
 			}
-
 			$fields			 = array_merge($_fields, $this->getfields($lx));
 			if($fstr!='')$fields['file_content'] 			= '相关文件';
 			foreach($subdata as $zb=>$da){
@@ -586,7 +583,6 @@ class flowModel extends Model
 			if($lx==0)foreach($fields as $k=>$rs){$data[''.$k.'_style'] = 'width:75%';break;}
 			$_colsr		= $this->xiangbordercolor;
 			if($_colsr=='')$_colsr = getconfig('bcolorxiang');
-			
 			$contvimr 	= c('html')->xiangtable($fields, $data, $_colsr);
 			$contvimr 	= '<div align="center">'.$contvimr.'</div>';
 			
@@ -668,10 +664,18 @@ class flowModel extends Model
 		$conta = $this->rock->matcharr($contview,2);
 		$edbof = false;
 		
-		
+		//--start--
+		if($this->ismobile==0 && $this->isflow>0 && $arr['flowinfor']['ischeck']==1){
+			if(arrvalue($this->nowcourse,'isxgfj')==1){
+				$edbof = true;
+			}
+		}
+		//--end--
 		foreach($conta as $fids){
 			$thnr = '';
-			
+			//--start--
+			if($edbof)$thnr='&nbsp; <a temp="clo" href="javascript:;" onclick="js.fileopt('.$fids.',2)" class="blue">在线编辑</a>';
+			//--end--
 			$contview = str_replace('`'.$fids.'`', $thnr, $contview);
 		}
 		$arr['contview'] = $contview;
@@ -681,7 +685,6 @@ class flowModel extends Model
 	//$lx=0PC，1移动
 	private function getsubdata($xu, $rows, $lx=0)
 	{
-
 		$iscz			= 0;
 		$iszb			= $xu+1;
 		$fields			= 'subdata'.$xu.'';
@@ -747,9 +750,7 @@ class flowModel extends Model
 	public function getdataedit()
 	{
 		$fobj 			= m('file');
-
 		$arr['data'] 	= $this->flowrsreplaceedit($this->rssust);
-		
 		$arr['table'] 	= $this->mtable;
 		$arr['tables'] 	= $this->moders['tables'];
 		$arr['modeid'] 	= $this->modeid;
@@ -791,7 +792,6 @@ class flowModel extends Model
 		$ztarr 			= $this->getnowstatus();
 		$arr['statustext'] 	= $ztarr[0];
 		$arr['statuscolor'] = $ztarr[1];
-
 		return $arr;
 	}
 	
@@ -927,7 +927,16 @@ class flowModel extends Model
 		$tuicourse = $this->flogmodel->getall($this->mwhere.' and `courseid`>0 and `valid`=1 and `status`=1 and `step`<'.$step.'','`id`,`checkname`,`name`','`step` desc');
 		$sarr['tuicourse']		= $tuicourse;
 		
-		
+		//--start--
+		if($this->isflow==3 && $nowcur)$sarr['courserows']		= $this->getcourse($this->id);
+		if($this->isflow==4 && $nowcur){
+			$courserows = $this->getcourse4($nowcur['id']);
+			if($courserows && count($courserows)>1){
+				$sarr['courserows'] = $courserows;
+				if(count($courserows)>1)$sarr['ischange'] 	= 0;//超过2个步骤就不需要选下步
+			}
+		}
+		//--end--
 		
 		return $sarr;
 	}
@@ -961,7 +970,9 @@ class flowModel extends Model
 		$colorsa   	= array('blue','green','red','#ff6600','#526D08','#888888','','','','','','','','','','','','','');
 		if(isempt($statusstr)){
 			$statussst = '不同意';
-			
+			//--start--
+			if($this->isflow==3)$statussst = '退回';
+			//--end--
 			$statusstr =  '待?处理|blue,已审核|green,'.$statussst.'|red';
 		}
 		$nowcheckname= arrvalue($rs,'nowcheckname');
@@ -1122,7 +1133,22 @@ class flowModel extends Model
 			}
 			
 			
-			
+			//--start--
+			if($this->isflow==3 || $this->isflow==4){
+				//保存选择步骤
+				$ncourseid 		= (int)$this->rock->post('sys_nextcourseid');
+				$ncoursena 		= $this->rock->post('sys_nextcoursename');
+				$ncoursenaid 	= $this->rock->post('sys_nextcoursenameid');
+				if($this->isflow==3)$this->addcheckname($ncourseid, $ncoursenaid, $ncoursena, true, 5);
+				if($this->isflow==4){
+					$sserows	= $this->getcourse4(0);
+					if($sserows && count($sserows)>1){
+						$this->delgetcourse4();
+						$this->addcheckname($ncourseid, $ncoursenaid, $ncoursena, true, 6);
+					}
+				}
+			}
+			//--end--
 			
 			$farr = $this->getflow();
 			//第一步自定义审核人
@@ -1235,7 +1261,32 @@ class flowModel extends Model
 		if(!is_array($urs))$urs = $this->db->getone('[Q]admin', "`id`='$urs'", '`deptid`,`deptpath`,`id`');
 		$coursedb 		= m('flowcourse');
 		
-		
+		//--start--
+		if($this->isflow==3){
+			$barr = array();
+			$rows = $this->checksmodel->getall($this->mwhere.' and `addlx`=5 group by `courseid`');
+			foreach($rows as $k=>$rs){
+				$ors = $coursedb->getone($rs['courseid']);
+				$ors['iszf'] = 0; //禁止转办
+				$ors['checktype'] = 'auto';
+				$barr[] = $ors;
+				
+				$xunibu	= $ors;
+				$xunibu['id'] 	 	= $ors['id']+88888; //辅助id
+				$xunibu['name'] 	= '申请人流转';
+				$xunibu['checktype']= 'apply';
+				$xunibu['checkshu'] = 1;
+				$xunibu['iszf'] 	= 0;
+				$xunibu['isqm'] 	= 0;
+				$xunibu['isxgfj'] 	= 0;
+				$xunibu['checktypeid'] 		= '';
+				$xunibu['checktypename'] 	= '';
+				$xunibu['courseact'] 		= '流转,退回到自己';
+				$barr[]= $xunibu;
+			}
+			return $barr;
+		}
+		//--end--
 		
 		$barr 	= $coursedb->pipeiCourse($this->modeid);
 		$rows 	= $barr['rows'];
@@ -1255,7 +1306,18 @@ class flowModel extends Model
 		$uid 	 = arrvalue($urs,'id',0);
 		$zshu	 = count($rows);
 		
-		
+		//--start--
+		//选择流程时判断
+		if($this->isflow==4 && $zshu>1){
+			foreach($rows as $k=>$rs){
+				$to = $this->checksmodel->rows($this->mwhere.' and `courseid`='.$rs['id'].' and `addlx` in(3,4,6,7)');//3是退回,4转办,6是选择,7监控转办
+				if($to>0){
+					$this->getflowpipeisss($rs, $urs, $kqobj);
+					return;
+				}
+			}
+		}
+		//--end--
 		
 		foreach($rows as $k=>$rs){
 			$whereid = (int)$rs['whereid'];
@@ -1602,15 +1664,9 @@ class flowModel extends Model
 	{
 		$type	= $crs['checktype'];
 		$cuid 	= $name = '';
-		$courseid = $crs['id'];
-		if(!$this->isempt($crs['num'])){
-			$uarr	= $this->flowcheckname($crs['num']);
-			if(is_array($uarr)){
-				if(!$this->isempt($uarr[0]))return $uarr;
-			}
-		}
-		
-		$cheorws= $this->checksmodel->getall($this->mwhere.' and `courseid`='.$courseid.'','checkid,checkname');
+		$courseid= $crs['id'];
+	
+		$cheorws = $this->checksmodel->getall($this->mwhere.' and `courseid`='.$courseid.'','checkid,checkname');
 		if($cheorws){
 			foreach($cheorws as $k=>$rs){
 				$lxss = $rs['checkid'];
@@ -1622,6 +1678,14 @@ class flowModel extends Model
 				$cuid = substr($cuid, 1);
 				$name = substr($name, 1);
 				return array($cuid, $name);
+			}
+		}
+		
+		//自定义审核人读取
+		if(!$this->isempt($crs['num'])){
+			$uarr	= $this->flowcheckname($crs['num']);
+			if(is_array($uarr)){
+				if(!$this->isempt($uarr[0]))return $uarr;
 			}
 		}
 		
@@ -2034,7 +2098,43 @@ class flowModel extends Model
 			$this->rs['zb_nameid'] 	= $zynameid;
 		}
 		
-		
+		//--start--
+		if(
+			$iszhuanyi == 0 && (
+			($this->isflow==3 && $zt==1 && $nowcourse['id']>88888)
+			||
+			($this->isflow==4 && $zt==1))
+		){
+			$sys_nextcourseid 		= $this->rock->post('sys_nextcourseid');
+			$sys_nextcoursename 	= $this->rock->post('sys_nextcoursename');
+			$sys_nextcoursenameid 	= $this->rock->post('sys_nextcoursenameid');
+			
+			if($this->isflow==3){
+				if(isempt($sys_nextcourseid))return '请选择下步处理步骤';
+				if($sys_nextcourseid>0){
+					if(isempt($sys_nextcoursenameid))return '请选择下步处理人';
+					$this->addcheckname($sys_nextcourseid, $sys_nextcoursenameid, $sys_nextcoursename, true, 5);
+				}
+			}
+			if($this->isflow==4){
+				$coursess = $this->getcourse4($nowcourse['id']);
+				if($coursess && count($coursess)>1){
+					$ischangenext = 0;
+					if(isempt($sys_nextcourseid))return '请选择下步处理步骤';
+					if($sys_nextcourseid>0){
+						$xuatype = m('flow_course')->getmou('checktype',"`id`='$sys_nextcourseid'");
+						if($xuatype!='change'){//不是上步选择
+							$sys_nextcoursenameid = '0';
+							$sys_nextcoursename   = 'autc';
+						}
+						if(isempt($sys_nextcoursenameid))return '请选择下步处理人';
+						$this->delgetcourse4();
+						$this->addcheckname($sys_nextcourseid, $sys_nextcoursenameid, $sys_nextcoursename, true, 6);
+					}
+				}
+			}
+		}
+		//--end--
 		
 		if($nextnameid=='' && $ischangenext==1)return '请选择下一步处理人';
 		
@@ -2861,7 +2961,28 @@ class flowModel extends Model
 		
 		if($highwhere!='')$where .= ' '.$highwhere;
 		
-		
+		//--start--
+		//多单位过滤数据
+		$myshere = array("`uid`='$uid'",'`uid`='.$uid.'',"uid='$uid'",'uid='.$uid.'',"`optid`='$uid'",'`optid`='.$uid.'',"optid='$uid'",'optid='.$uid.'');
+		$bo		 = false;
+		foreach($myshere as $myw1)if(contain($where, $myw1))$bo=true;
+		if(ISMORECOM && !$bo && $arr['companywhere']=='' && $this->flowcompanyidfieds != 'none'){
+			if($this->flowcompanyidfieds=='uid'){
+				$where .= ' and {asqom}`uid` in(select `id` from `[Q]admin` where `companyid`='.$this->companyid.')';
+			}else{
+				$fields = $this->db->getallfields(''.PREFIX.''.$this->mtable.'');
+				if(in_array('comid', $fields) || in_array('companyid', $fields)){
+					if($this->modenum=='user' || $this->modenum=='userinfo'){
+						$where  .= ' and ({asqom}`companyid`='.$this->companyid.' or '.$this->rock->dbinstr('{asqom}`dwid`', $this->companyid).')';
+					}else{
+						$comids  = ''.$this->companyid.'';
+						if($this->adminid==1)$comids.=',0';//包含旧的
+						$where  .= ' and {asqom}`'.$this->flowcompanyidfieds.'` in('.$comids.')';
+					}
+				}
+			}
+		}
+		//--end--
 		
 		$where 			= str_replace('{asqom}', $arr['asqom'], $where);
 		$arr['order'] 	= str_replace('{asqom}', $arr['asqom'], $arr['order']);
@@ -3268,7 +3389,6 @@ class flowModel extends Model
 				$rows[$k]['statustext'] = $this->getstatusstr($rs);
 			}
 		}
-
 		$cont 	 	= c('html')->createrows($rows, substr($headstr, 1),'#cccccc','noborder');
 		return $cont;
 	}
@@ -3354,5 +3474,34 @@ class flowModel extends Model
 		return $rows;
 	}
 	
-	
+	//--start--
+	/**
+	*	读取可选择的步骤
+	*/
+	public function getcourse($id=0)
+	{
+		$ids = '0';
+		if($id>0){
+			$rows= $this->flogmodel->getall("`table`='$this->mtable' and `mid`='$id' and `status`=1 and `valid`=1 and `courseid`>0");
+			foreach($rows as $k=>$rs)$ids.=','.$rs['courseid'].'';
+		}
+		$sql = "select `id`,`name`,`checktypeid`,`checktype` from `[Q]flow_course` where `setid`='$this->modeid' and `id` not in($ids) and `status`=1 order by `sort`";
+		return $this->db->getall($sql);
+	}
+	/**
+	*	流程模式是4读取下步选择
+	*/
+	private $getcourseid4 = '0';//同级ID
+	public function getcourse4($id)
+	{
+		$sql = "select `id`,`name`,`checktypeid`,`checktype` from `[Q]flow_course` where `setid`='$this->modeid' and `mid`='$id' and `status`=1 order by `sort`";
+		$rows = $this->db->getall($sql);
+		foreach($rows as $k=>$rs)$this->getcourseid4.=','.$rs['id'].'';
+		return $rows;
+	}
+	private function delgetcourse4()
+	{
+		$this->checksmodel->delete($this->mwhere.' and `courseid` in('.$this->getcourseid4.') and `addlx` in(3,4,6)');//删除同级的选择
+	}
+	//--end--
 }

@@ -1,0 +1,24 @@
+[2019-07-31 16:07:51]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=901524
+CREATE TABLE `xinhu_wxqy_agent` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL COMMENT '应用名称',
+  `agentid` varchar(20) DEFAULT '0' COMMENT '应用Id',
+  `sort` smallint(6) DEFAULT '0',
+  `square_logo_url` varchar(500) DEFAULT NULL,
+  `redirect_domain` varchar(50) DEFAULT NULL,
+  `type` tinyint(1) DEFAULT '0',
+  `description` varchar(500) DEFAULT NULL,
+  `allow_userinfos` varchar(4000) DEFAULT NULL,
+  `allow_partys` varchar(4000) DEFAULT NULL,
+  `allow_tags` varchar(500) DEFAULT NULL,
+  `close` tinyint(1) DEFAULT '0' COMMENT '是否被禁用',
+  `report_location_flag` tinyint(1) DEFAULT '0' COMMENT '@地理位置上报 0：不上报；1：进入会话上报；2：持续上报',
+  `isreportenter` tinyint(1) DEFAULT '0' COMMENT '是否上报用户进入应用事件',
+  `isreportuser` tinyint(1) DEFAULT '0' COMMENT '是否接收用户变更通知',
+  `home_url` varchar(200) DEFAULT NULL,
+  `secret` varchar(100) DEFAULT NULL COMMENT 'secret管理密钥',
+  `menujson` varchar(2000) DEFAULT NULL COMMENT '菜单json数组',
+  PRIMARY KEY (`id`),
+  KEY `name` (`name`),
+  KEY `agentid` (`agentid`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

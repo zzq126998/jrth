@@ -1,0 +1,49 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+		样式 背景为白色
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item><!--去掉标题栏 -->
+        <!-- 设置activity切换动画 -->  
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+    
+ 
+    
+    <!-- animation 样式 -->  
+    <style name="activityAnimation" parent="@android:style/Animation">  
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>  
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>  
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>  
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>  
+    </style> 
+  
+    
+	<!-- 提示样式 -->
+	<style name="msgstyle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:background">#88000000</item>
+    </style>
+
+
+
+
+</resources>

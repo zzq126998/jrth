@@ -11,7 +11,7 @@ $(document).ready(function(){
 	{params}
 	var modenum = 'news',modename='新闻资讯',isflow=0,modeid='88',atype = params.atype,pnum=params.pnum,modenames='';
 	if(!atype)atype='';if(!pnum)pnum='';
-	var fieldsarr = [{"name":"\u7533\u8bf7\u4eba","fields":"base_name"},{"name":"\u7533\u8bf7\u4eba\u90e8\u95e8","fields":"base_deptname"},{"name":"\u5355\u53f7","fields":"sericnum"},{"fields":"title","name":"\u6807\u9898","fieldstype":"text","ispx":"0","isalign":"1","islb":"1"},{"fields":"fengmian","name":"\u5c01\u9762\u56fe\u7247","fieldstype":"uploadimg","ispx":"0","isalign":"1","islb":"1"},{"fields":"typename","name":"\u7c7b\u578b\u540d\u79f0","fieldstype":"rockcombo","ispx":"1","isalign":"0","islb":"1"},{"fields":"content","name":"\u5185\u5bb9","fieldstype":"htmlediter","ispx":"0","isalign":"0","islb":"0"},{"fields":"recename","name":"\u53d1\u9001\u7ed9","fieldstype":"changedeptusercheck","ispx":"0","isalign":"0","islb":"1"},{"fields":"url","name":"\u76f8\u5e94\u5730\u5740","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"zuozhe","name":"\u6765\u6e90","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"indate","name":"\u65e5\u671f","fieldstype":"date","ispx":"1","isalign":"0","islb":"1"},{"fields":"optname","name":"\u53d1\u5e03\u4eba","fieldstype":"text","ispx":"1","isalign":"0","islb":"1"},{"fields":"startdt","name":"\u5c55\u793a\u65e5\u671f","fieldstype":"date","ispx":"0","isalign":"0","islb":"0"},{"fields":"enddt","name":"\u5c55\u793a\u622a\u6b62","fieldstype":"date","ispx":"0","isalign":"0","islb":"0"},{"fields":"issms","name":"\u53d1\u624b\u673a\u77ed\u4fe1","fieldstype":"checkbox","ispx":"0","isalign":"0","islb":"0"},{"fields":"istop","name":"\u6392\u5e8f\u53f7","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"},{"fields":"status","name":"\u72b6\u6001","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"}],fieldsselarr= [];
+	var fieldsarr = [{"name":"\u7533\u8bf7\u4eba","fields":"base_name"},{"name":"\u7533\u8bf7\u4eba\u90e8\u95e8","fields":"base_deptname"},{"name":"\u5355\u53f7","fields":"sericnum"},{"fields":"title","name":"\u6807\u9898","fieldstype":"text","ispx":"0","isalign":"1","islb":"1"},{"fields":"fengmian","name":"\u5c01\u9762\u56fe\u7247","fieldstype":"uploadimg","ispx":"0","isalign":"1","islb":"1"},{"fields":"typename","name":"\u7c7b\u578b\u540d\u79f0","fieldstype":"rockcombo","ispx":"1","isalign":"0","islb":"1"},{"fields":"content","name":"\u5185\u5bb9","fieldstype":"htmlediter","ispx":"0","isalign":"0","islb":"0"},{"fields":"recename","name":"\u53d1\u9001\u7ed9","fieldstype":"changedeptusercheck","ispx":"0","isalign":"0","islb":"1"},{"fields":"url","name":"\u76f8\u5e94\u5730\u5740","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"zuozhe","name":"\u6765\u6e90","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"indate","name":"\u65e5\u671f","fieldstype":"date","ispx":"1","isalign":"0","islb":"1"},{"fields":"optname","name":"\u53d1\u5e03\u4eba","fieldstype":"text","ispx":"1","isalign":"0","islb":"1"},{"fields":"startdt","name":"\u5c55\u793a\u65e5\u671f","fieldstype":"date","ispx":"0","isalign":"0","islb":"0"},{"fields":"enddt","name":"\u5c55\u793a\u622a\u6b62","fieldstype":"date","ispx":"0","isalign":"0","islb":"0"},{"fields":"issms","name":"\u53d1\u624b\u673a\u77ed\u4fe1","fieldstype":"checkbox","ispx":"0","isalign":"0","islb":"0"},{"fields":"istop","name":"\u6392\u5e8f\u53f7","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"},{"fields":"status","name":"\u72b6\u6001","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"},{"fields":"appxs","name":"APP\u9996\u9875\u663e\u793a","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"}],fieldsselarr= [];
 	
 	var c = {
 		reload:function(){
@@ -210,7 +210,7 @@ $(document).ready(function(){
 		fanye:true,modenum:modenum,modename:modename,statuschange:false,tablename:jm.base64decode('bmV3cw::'),
 		url:c.storeurl(),storeafteraction:'storeaftershow',storebeforeaction:'storebeforeshow',
 		params:{atype:atype},
-		columns:[{text:"标题",dataIndex:"title",align:"left"},{text:"封面图片",dataIndex:"fengmian",align:"left"},{text:"类型名称",dataIndex:"typename",sortable:true},{text:"发送给",dataIndex:"recename"},{text:"来源",dataIndex:"zuozhe"},{text:"日期",dataIndex:"indate",sortable:true},{text:"发布人",dataIndex:"optname",sortable:true},{text:"排序号",dataIndex:"istop",sortable:true},{text:"状态",dataIndex:"status",sortable:true},{
+		columns:[{text:"标题",dataIndex:"title",align:"left"},{text:"封面图片",dataIndex:"fengmian",align:"left"},{text:"类型名称",dataIndex:"typename",sortable:true},{text:"发送给",dataIndex:"recename"},{text:"来源",dataIndex:"zuozhe"},{text:"日期",dataIndex:"indate",sortable:true},{text:"发布人",dataIndex:"optname",sortable:true},{text:"排序号",dataIndex:"istop",sortable:true},{text:"状态",dataIndex:"status",sortable:true},{text:"APP首页显示",dataIndex:"appxs",sortable:true},{
 			text:'',dataIndex:'caozuo',callback:'opegs{rand}'
 		}],
 		itemdblclick:function(){
@@ -227,7 +227,7 @@ $(document).ready(function(){
 	
 //[自定义区域start]
 
-bootparams.celleditor = (pnum=='all');
+bootparams.celleditor = (admintype=='1' || pnum=='all');
 bootparams.statuschange = true;
 c.setcolumns('recename',{
 	renderer:function(v){
@@ -253,6 +253,10 @@ c.setcolumns('istop',{
 	'editor':true
 });
 c.setcolumns('status',{
+	type:'checkbox',
+	'editor':true
+});
+c.setcolumns('appxs',{
 	type:'checkbox',
 	'editor':true
 });

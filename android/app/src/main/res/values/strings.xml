@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appname">信呼</string>
+
+    <string name="appname_en">xinhu</string>
+    <string name="appgwurl">www.rockoa.com</string>
+
+    <string name="app_name">办公OA</string>
+    <string name="about">关于信呼v1.2.3</string>
+    <string name="content">让工作沟通变得轻松简单</string>
+    <string name="action_settings">设置</string>
+    <string name="loadstring">处理中...</string>
+
+
+    <string name="yyin_btn">按住说话</string>
+    <string name="yyin_btns">松开结束</string>
+
+
+    <string name="copy">复制</string>
+    <string name="copy_en">Copy</string>
+
+    <string name="copyy">已复制</string>
+    <string name="copyy_en">Has Copy</string>
+
+    <string name="ziliaov">查看资料</string>
+    <string name="ziliaov_en">Has Copy</string>
+
+</resources>

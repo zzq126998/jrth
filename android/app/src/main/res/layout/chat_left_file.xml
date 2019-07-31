@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--会话聊天界面左边聊天的-->
+<RelativeLayout  
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="15dp">
+    <TextView
+        android:id="@+id/xu"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+  <ImageView
+      android:id="@+id/icons"
+      android:layout_centerVertical="true"
+      android:layout_width="@dimen/facesizechat"
+      android:layout_height="@dimen/facesizechat"
+      android:layout_alignParentLeft="true"
+      android:layout_marginLeft="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp"
+      android:layout_alignParentTop="true"
+      android:src="@drawable/noface" />
+
+  <TextView
+      android:id="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/jian"
+      android:layout_alignParentTop="true"
+      android:layout_marginRight="70dp"
+      android:layout_marginTop="5dp"
+      android:textColor="@color/qipao_dt"
+      android:textSize="12dp"
+      android:text="他人(23:55:00)" />
+
+  <RelativeLayout
+      android:id="@+id/content"
+      android:layout_below="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/jian"
+      android:layout_marginLeft="-1dp"
+      android:layout_marginRight="@dimen/chattoleftrig"
+      android:layout_marginTop="2dp"
+      android:padding="10dp"
+      android:background="@drawable/chat_left" >
+    <TextView
+        android:id="@+id/fileext"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/radius_fileext"
+        android:text="jpg"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传文件.doc"
+        android:textSize="@dimen/textsizechat"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/fileext"
+        />
+
+
+    <TextView
+        android:id="@+id/filesizecn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="大小：12KB"
+        android:textSize="12dp"
+        android:layout_below="@+id/filename"
+        android:layout_marginTop="5dp"
+        android:textColor="#888888"
+        android:layout_alignLeft="@+id/filename"
+        android:layout_toRightOf="@+id/fileext"
+        android:gravity="center"
+        />
+    </RelativeLayout>
+
+  <TextView
+      android:id="@+id/jian"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_toRightOf="@+id/icons"
+      android:layout_alignParentTop="true"
+      android:layout_marginLeft="0dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="10dp"
+      android:background="@drawable/chat_left_jian" />
+
+</RelativeLayout>
+
+</RelativeLayout>

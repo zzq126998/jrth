@@ -1,0 +1,2 @@
+[2019-07-31 15:57:52]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=38747
+alter table `xinhu_news` add `appxs` tinyint(1) DEFAULT '0' COMMENT 'app首页显示'

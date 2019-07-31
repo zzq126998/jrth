@@ -20,7 +20,6 @@ class yingyongClassAction extends Action
 	
 	public function getdataAjax()
 	{
-
 		$rows = m('im_group')->getall('`type`=2','id,name,face,num,valid','`sort`');
 		echo json_encode($rows);
 	}

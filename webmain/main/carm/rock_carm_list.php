@@ -8,13 +8,13 @@ $(document).ready(function(){
 		columns:[{
 			text:'',dataIndex:'caozuo'
 		},{
-			text:'车牌号',dataIndex:'carnum'
+			text:'飞机号',dataIndex:'carnum'
 		},{
-			text:'车辆品牌',dataIndex:'carbrand'
+			text:'飞机品牌',dataIndex:'carbrand'
 		},{
 			text:'型号',dataIndex:'carmode'
 		},{
-			text:'车辆类型',dataIndex:'cartype'
+			text:'飞机类型',dataIndex:'cartype'
 		},{
 			text:'购买日期',dataIndex:'buydt',sortable:true
 		},{
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			a.exceldown();
 		},
 		adds:function(){
-			openinput('飞机管理',modenum);
+			openinput('车辆管理',modenum);
 		},
 		search:function(){
 			var s=get('key_{rand}').value;

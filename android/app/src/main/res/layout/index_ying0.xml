@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout  
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+    >
+
+  <RelativeLayout
+      android:id="@+id/item"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="20dp"
+      android:background="@drawable/chatborder"
+      >
+
+
+    <com.view.ImageViewXinhu
+      android:id="@+id/icons"
+        android:layout_marginTop="20dp"
+      android:layout_width="@dimen/yingsize0"
+      android:layout_height="@dimen/yingsize0"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/icons" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/icons"
+        android:textSize="14dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/app_name"
+        />
+
+    <TextView
+        android:id="@+id/stotal"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@+id/icons"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:background="@drawable/radius"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:padding="2dp"
+        android:text="0" />
+
+    </RelativeLayout>
+</RelativeLayout>

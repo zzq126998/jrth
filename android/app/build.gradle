@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.rock.xinhuapk"
+        minSdkVersion 14
+        targetSdkVersion 21
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar']) //引入libs下所有jar
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+}

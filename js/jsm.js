@@ -281,7 +281,6 @@ var changename_uuusw;
 function changeuser(na,lx){
 	changename_uuusw=na;
 	if(!lx)lx='';
-	
 	var url=''+apiurl+'task.php?fn=dept&adminid='+adminid+'&token='+token+'&changetype='+lx+'';
 	var s='<div style="height:100%;width:100%;position:fixed;top:0px;left:0px;z-index:99; background:rgba(0,0,0,0.2)"  align="center" id="changmodddid">';
 	s+='<div style="max-width:300px;height:100%;max-height:450px;margin-top:5%; background:while;border:1px #dddddd solid">';

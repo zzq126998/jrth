@@ -1,6 +1,5 @@
 <?php
 if(!isset($ajaxbool))$ajaxbool = $rock->jm->gettoken('ajaxbool', 'false');
-
 $ajaxbool	= $rock->get('ajaxbool', $ajaxbool);
 $p			= PROJECT;
 if(!isset($m))$m='index';
@@ -21,7 +20,6 @@ if($rock->contain($m, '|')){
 	$m 		= $_mas[0];
 	$_m		= $_mas[1];
 }
-
 include_once($rock->strformat('?0/?1/?1Action.php',ROOT_PATH, $p));
 $rand		= date('YmdHis').rand(1000,9999);
 if(substr($d,-1)!='/' && $d!='')$d.='/';

@@ -1,0 +1,3 @@
+<?php
+//系统授权的key，绑定域名192.168.0.13，请联系官网获取，更多查看帮助http://www.rockoa.com/view_authorfile.html
+return 'mm0aj0pss0psk0ma0xs0kw0pgp0mm0ka0ap0ppw0mm0aj0kw0jw0ma0ka0ax0pgs0aw0am0ak0psa0mw0aj0psa0psk0mm0psk0psa0psk0ws0psk0aw0ppw0ma0psw0aw0xl0ma0aj0psl0xa01';

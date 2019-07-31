@@ -98,7 +98,27 @@ var editor,arr=<?=$da['fieldsjson']?>,moders=<?=json_encode($da['moders'])?>,gon
 				}
 			}
 			
-			
+			//--start--
+			if($da['moders']['isflow']==3 || ($da['moders']['isflow']==4 && isset($da['courserows']))){
+				$str1 = '<div align="center"><div style="text-align:center;background:#EDF7FC;line-height:30px;border-radius:5px;margin-top:20px;"><b>下步处理</b></div>';
+				
+				$str1.='<div style="padding-top:5px">';
+				$str2 = $inputobj->inputchangeuser(array(
+					'name'		=>'sys_nextcoursename',
+					'id'		=>'sys_nextcoursenameid',
+					'placeholder'=>'选择下步处理人',
+					'type'		=> 'changeusercheck',
+					'title'		=> '选择下步处理人',
+				));
+				$str3 = '';
+				$dsa1 = ($da['moders']['isflow']==4) ? 'none' : '';
+				foreach($da['courserows'] as $k3=>$rs3)$str3.='<option changerange="'.$rs3['checktypeid'].'" value="'.$rs3['id'].'" checktype="'.$rs3['checktype'].'">'.$rs3['id'].'.'.$rs3['name'].'</option>';
+				$str1.='<table width="100%"><tr><td width="15%" nowrap height="30" align="right"><font color=red>*</font>下步处理&nbsp;</td><td width="100%"><select name="sys_nextcourseid" class="inputs" onchange="c.changenextcourse(this, '.$da['moders']['isflow'].')"><option value="">-请选择-</option>'.$str3.'</select></td></tr><tr><td>&nbsp;</td></tr><tr style="display:'.$dsa1.'" id="sys_nextcoursediv1"><td nowrap height="30" align="right"><font color=red>*</font>下步处理人&nbsp;</td><td>'.$str2.'</td></tr></table>';
+				$str1.='</div>';
+				$str1.='</div>';
+				echo $str1;
+			}
+			//--end--
 			
 			//是否抄送
 			$iscs = (int)$da['moders']['iscs'];

@@ -1,0 +1,2 @@
+[2019-07-31 15:57:52]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=38747
+alter table `xinhu_demo` add `num` varchar(50) DEFAULT NULL COMMENT '编号'

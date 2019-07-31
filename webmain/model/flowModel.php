@@ -13,9 +13,7 @@ class flowClassModel extends Model
 	
 	public function opt($act,$num,$mid,$cs1='',$cs2='',$cs3='',$cs4='')
 	{
-
 		$this->initflow($num, $mid);
-		
 		return $this->flow->$act($cs1, $cs2, $cs3, $cs4);
 	}
 	
@@ -56,7 +54,6 @@ class flowClassModel extends Model
 	
 	public function getdataedit($num, $mid)
 	{
-
 		return $this->opt('getdataedit', $num, $mid);
 	}
 	

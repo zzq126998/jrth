@@ -1,0 +1,8 @@
+<?php
+/**
+*	来自：信呼开发团队
+*	作者：磐石(rainrock)
+*	网址：http://www.rockoa.com/
+*	系统文件
+*/
+class wxqyClassAction extends apiAction { public function initAction() { $this->display= false; } public function indexAction() { $diaoobj = m('weixinqy:diao'); $xml = $diaoobj->getxml(); if($xml){ $diaoobj->eventoption($xml); } } public function chatAction() { $xml = m('weixinqy:diao')->getxml(); $AgentType = $xml->getval('AgentType'); $PackageId = $xml->getval('PackageId'); m('weixinqy:chat')->chatsend($xml); echo $PackageId; } public function testAction() { $obj = m('weixin:diao'); $str = '<xml><ToUserName>wwf708abd4a74f0658</ToUserName><FromUserName>admin</FromUserName><CreateTime>1495432480</CreateTime><MsgType>image</MsgType><PicUrl>http://p.qpic.cn/pic_wework/1926972971/4543184d8117badb31cc66588e3f0b7acf834d3da3121b24/</PicUrl><MsgId>851028181</MsgId><MediaId>18MrF2nKV-z0SPq6sxh665p-hGkea0ru-hMndjXd9uR95T0dFA01O3TIpRlDzFA_y</MediaId><AgentID>1000010</AgentID></xml>'; $str = '<xml><ToUserName>wwf708abd4a74f0658</ToUserName><FromUserName>admin</FromUserName><CreateTime>1495432480</CreateTime><MsgType>image</MsgType><PicUrl>http://p.qpic.cn/pic_wework/1926972971/4543184d8117badb31cc66588e3f0b7acf834d3da3121b24/</PicUrl><MsgId>851028181</MsgId><MediaId>18MrF2nKV-z0SPq6sxh665p-hGkea0ru-hMndjXd9uR95T0dFA01O3TIpRlDzFA_y</MediaId><AgentID>1000010</AgentID></xml>'; $xml = new xmlDecodes($str); m('weixinqy:chat')->chatsend($xml); $FromUserName = $xml->getval('FromUserName'); echo $FromUserName; } }

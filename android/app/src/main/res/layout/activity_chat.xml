@@ -1,0 +1,214 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:background="@color/bgcolor"
+    android:id="@+id/rl"
+    >
+
+    <LinearLayout
+        android:id="@+id/headertopzt"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="@color/mcolor"
+        android:orientation="vertical"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/headertopzt"
+        android:id="@+id/headertop"
+        android:layout_height="@dimen/headheight">
+
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/headheight"
+        android:background="@color/mcolor"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/headheight"
+            android:gravity="center"
+            android:text="会话"
+            android:textSize="@dimen/headfontsize"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/back"
+        android:layout_width="@dimen/headheight"
+        android:layout_height="@dimen/headheight"
+        android:background="@drawable/btn_tm"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:layout_margin="12dp"
+
+        android:src="@drawable/back" />
+    </LinearLayout>
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/scrollviewss"
+        android:layout_below="@+id/headertop"
+        android:layout_above="@+id/navtabs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/showview0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/navtabs"
+        android:layout_above="@+id/navtab"
+        android:background="#30000000" />
+
+
+    <RelativeLayout
+        android:id="@+id/navtab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#eeeeee"
+        android:paddingBottom="8dp"
+        >
+
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="#00000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/yuyinbtn"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/chatimg1" />
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="#00000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/jianpanbtn"
+            android:visibility="gone"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/chatimg3" />
+
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_marginLeft="44dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/righbtnss"
+            android:textColor="#333333"
+            android:textSize="18dp"
+            android:background="@drawable/chatinput"
+            android:padding="5dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/yybtn"
+            android:visibility="gone"
+            android:layout_marginLeft="44dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/righbtnss"
+            android:textColor="#333333"
+            android:textSize="18dp"
+            android:background="@drawable/btn_yuyin"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="@string/yyin_btn" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/righbtnss"
+            android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/sendbtn"
+            android:background="@drawable/chatsendbtn"
+            android:layout_width="46dp"
+            android:layout_height="32dp"
+
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="gone"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="3dp"
+            android:text="发送"/>
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="#00000000"
+
+            android:layout_marginRight="8dp"
+            android:id="@+id/add"
+            android:src="@drawable/chatimg2" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/msg"
+        style="@style/msgstyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_below="@+id/headertop"
+        android:text="提示" />
+
+    <LinearLayout
+        android:id="@+id/up"
+        android:visibility="gone"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:background="#50000000"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/headertop"
+        android:layout_marginTop="1px"
+        android:layout_marginRight="1px"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:layout_margin="2dp"
+            android:src="@drawable/up" />
+    </LinearLayout>
+
+</RelativeLayout>

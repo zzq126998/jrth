@@ -268,7 +268,6 @@ var c={
 		window.print();
 	},
 	daochuword:function(){
-		
 		var url='task.php?a=p&num='+modenum+'&mid='+mid+'&stype=word';
 		js.location(url);
 	},

@@ -157,7 +157,10 @@ cont:
 			<option value="1">顺序流程(按照预设好的步骤一步一步审核)</option>
 			<option value="2">顺序前置流程(出现重复人审核自动跳过)</option>
 			<?php
-			
+			//--start--
+			echo '<option value="3">自由流程(每步都需要由申请人指定哪个步骤)</option>';
+			echo '<option value="4">选择流程(当下一步出现多步骤需要指定哪个步骤)</option>';
+			//--end--
 			?>
 			</select>
 			</td>

@@ -44,6 +44,7 @@ function initbodys(){
 		form('xian').length=1;//清空县下拉框的数据
 		var val = this.value;
 		if(val=='')return;
+		
 		//ajax获取对应城市数据，在webmain/flow/input/mode_demoAction.php 下方法getcityAjax 查找数据库返回
 		js.ajax(geturlact('getcity'),{'sheng':val},function(ret){
 			//得到数据填充到下拉框
@@ -84,8 +85,7 @@ function changedata(){
 
 //3、提交保存时触发事件，常用于判断数据是否完整性
 function changesubmit(d){
-	if(!d.explain)return '加会班客观世界红包卡圣诞节和肯定撒';
-	if(!d.name)return '名称不能为空1';
+	//if(!d.name)return '名称不能为空';
 };
 
 //4、保存提交成功触发

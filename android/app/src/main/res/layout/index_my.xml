@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+
+      android:layout_marginTop="15dp"
+      android:background="@color/white"
+      android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/xian1"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/line2" />
+
+
+
+    <com.view.ImageViewXinhu
+        android:id="@+id/icons"
+        android:layout_centerVertical="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/xian1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/noface" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/titles"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="true"
+        android:text="@string/app_name"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/titles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/name"
+        android:layout_toRightOf="@+id/icons"
+        android:layout_toLeftOf="@+id/right"
+        android:paddingBottom="5dp"
+        android:textColor="#888888"
+        android:text="@string/app_name"
+        android:textSize="14dp" />
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/hang"
+        android:layout_below="@+id/icons"
+        android:layout_marginTop="15dp"
+        android:background="@color/line2" />
+
+  </RelativeLayout>
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginTop="15dp"
+      android:background="@color/line2" />
+
+<!--
+  <RelativeLayout
+      android:id="@+id/mya_danganbtn"
+      android:background="@drawable/chatborder"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="我个档案"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:text="〉"
+        android:textColor="#cccccc"
+        android:layout_marginRight="10dp"
+        />
+  </RelativeLayout>
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:background="@color/line2" />
+-->
+
+  <RelativeLayout
+      android:id="@+id/mya_clearbtn"
+      android:background="@drawable/chatborder"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="清空本地数据库"
+        />
+  </RelativeLayout>
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:background="@color/line2" />
+
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="新消息提醒"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:checked="true"
+        android:layout_marginRight="10dp"
+        />
+  </RelativeLayout>
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:background="@color/line2" />
+
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginTop="15dp"
+      android:background="@color/line2" />
+  <RelativeLayout
+      android:id="@+id/mya_aboutbtn"
+      android:background="@drawable/chatborder"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/about"
+        />
+  </RelativeLayout>
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:background="@color/line2" />
+  <RelativeLayout
+      android:id="@+id/mya_versionbtn"
+      android:background="@drawable/chatborder"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="检查更新"
+        />
+
+    <TextView
+        android:id="@+id/mya_versiontext"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:text="有新版本"
+        android:textColor="@color/red"
+        android:layout_marginRight="10dp"
+        />
+  </RelativeLayout>
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:background="@color/line2" />
+  <RelativeLayout
+      android:id="@+id/mya_cachebtn"
+      android:background="@drawable/chatborder"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="清理缓存"
+        />
+  </RelativeLayout>
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:background="@color/line2" />
+  <RelativeLayout
+      android:id="@+id/mya_shatebtn"
+      android:background="@drawable/chatborder"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="分享"
+        />
+  </RelativeLayout>
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:background="@color/line2" />
+
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:layout_marginTop="20dp"
+      android:background="@color/line2" />
+  <Button
+      android:id="@+id/exitbtn"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="@drawable/chatborder"
+      android:textColor="#E53939"
+      android:textSize="16dp"
+      android:text="退出系统" />
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1px"
+      android:background="@color/line2"
+      android:layout_marginBottom="15dp"
+      />
+
+    
+</LinearLayout>

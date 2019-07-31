@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout  
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:layout_width="fill_parent"  
+  android:layout_height="wrap_content"
+  
+>
+  
+	<RelativeLayout
+	    android:id="@+id/itemssm"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/border"
+	    >
+
+  <ImageView
+      android:id="@+id/icons"
+      android:layout_centerVertical="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_marginLeft="10dp"
+      android:layout_alignParentTop="true"
+      android:src="@drawable/dian_hui" />
+
+  <TextView
+      android:id="@+id/right"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:layout_marginRight="10dp"
+      android:textColor="#ffffff"
+      android:text="5天"
+      android:textSize="18dp"/>
+		  
+  <TextView
+      android:id="@+id/titles"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:layout_below="@+id/title"
+      android:layout_toRightOf="@+id/icons"
+      android:layout_toLeftOf="@+id/right"
+      android:layout_marginRight="5dp"
+      android:paddingBottom="10dp"
+      android:textColor="#50ffffff"
+      android:text="2014-03-07"
+      android:textSize="16dp" />
+		
+  <TextView
+      android:id="@+id/title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignLeft="@+id/titles"
+      android:layout_marginTop="5dp"
+      android:layout_alignParentTop="true"
+      android:textColor="#ffffff"
+      android:text="今日"
+      android:textSize="22dp" />
+ 
+  </RelativeLayout>
+  
+  <View
+	android:layout_width="fill_parent"
+	android:layout_height="1px"
+	android:layout_below="@+id/itemssm"
+	android:layout_marginTop="10dp"
+	android:background="#00000000" />
+
+</RelativeLayout> 

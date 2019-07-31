@@ -1,0 +1,9 @@
+[2019-07-31 16:07:00]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=770477
+CREATE TABLE `xinhu_zding_dept` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `parentid` int(11) DEFAULT NULL,
+  `order` int(11) DEFAULT '0',
+  `bmid` int(11) DEFAULT '0' COMMENT '部门Id',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

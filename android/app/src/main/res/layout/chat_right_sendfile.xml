@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--会话聊天界面右边聊天的--> 
+<RelativeLayout  
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="15dp">
+    <TextView
+        android:id="@+id/xu"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+
+  <ImageView
+      android:id="@+id/icons"
+      android:layout_centerVertical="true"
+      android:layout_width="@dimen/facesizechat"
+      android:layout_height="@dimen/facesizechat"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp"
+      android:layout_alignParentTop="true"
+      android:src="@drawable/noface" />
+
+  <TextView
+      android:id="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toLeftOf="@+id/jian"
+      android:layout_alignParentTop="true"
+      android:layout_marginLeft="70dp"
+      android:layout_marginTop="5dp"
+      android:textColor="@color/qipao_dt"
+      android:textSize="12dp"
+      android:text="我(23:55:00)" />
+
+  <RelativeLayout
+      android:id="@+id/content"
+      android:layout_below="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toLeftOf="@+id/jian"
+      android:layout_marginRight="-1dp"
+      android:layout_marginLeft="@dimen/chattoleftrig"
+      android:layout_marginTop="2dp"
+      android:padding="10dp"
+      android:background="@drawable/chat_right"
+      >
+
+    <TextView
+        android:id="@+id/fileext"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/radius_fileext"
+        android:text="jpg"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传文件.doc"
+        android:textSize="@dimen/textsizechat"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/fileext"
+        />
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:max="100"
+        android:id="@+id/progress"
+        android:progress="0"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filename"
+        android:layout_alignLeft="@+id/filename"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal" />
+
+    <TextView
+        android:id="@+id/filesizecn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="大小：12KB"
+        android:textSize="12dp"
+        android:layout_below="@+id/progress"
+        android:layout_alignLeft="@+id/progress"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/fileext"
+        android:gravity="center"
+        />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:id="@+id/filesendbtn"
+        android:layout_toRightOf="@+id/filesizecn"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/btn_lightblue"
+        android:layout_below="@+id/progress"
+        android:text="发送"
+        android:textSize="12dp"
+        android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+
+  <TextView
+      android:id="@+id/jian"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_toLeftOf="@+id/icons"
+      android:layout_alignParentTop="true"
+      android:layout_marginRight="0dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="10dp"
+      android:background="@drawable/chat_right_jian" />
+
+  <TextView
+      android:id="@+id/msg"
+      android:visibility="gone"
+      android:layout_below="@+id/dt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toLeftOf="@+id/content"
+      android:layout_marginRight="@dimen/chattorightms"
+      android:layout_marginTop="10dp"
+      android:textColor="#ff6600"
+      android:textSize="10dp"
+      android:text="发送中" />
+  </RelativeLayout>
+</RelativeLayout>

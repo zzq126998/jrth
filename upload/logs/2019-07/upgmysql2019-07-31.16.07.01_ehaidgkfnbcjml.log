@@ -1,0 +1,13 @@
+[2019-07-31 16:07:00]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=770477
+CREATE TABLE `xinhu_zding_agent` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL COMMENT '应用名称',
+  `agentid` varchar(20) DEFAULT '0' COMMENT '应用Id',
+  `sort` smallint(6) DEFAULT '0',
+  `description` varchar(500) DEFAULT NULL,
+  `ismr` tinyint(1) DEFAULT '0' COMMENT '是否默认找不到应用发这里',
+  `color` varchar(6) DEFAULT NULL COMMENT '应用提醒颜色rgb格式',
+  PRIMARY KEY (`id`),
+  KEY `name` (`name`),
+  KEY `agentid` (`agentid`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

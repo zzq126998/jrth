@@ -15,6 +15,7 @@ var rockmenuobj	= null;
 		var rand	= js.getrand(); 
 		var me		= this;
 		this.obj	= obj;
+		
 		//初始化
 		this.init	= function(){
 			if(!obj)return;
@@ -30,7 +31,6 @@ var rockmenuobj	= null;
 			if(can.bgcolor!='')obj.css('background','');
 			if(can.autoremove)o.remove();
 		};
-
 		this.setcontent	= function(){
 			$('.rockmenu').remove();
 			rockmenuobj	= this;
@@ -47,7 +47,6 @@ var rockmenuobj	= null;
 			if(can.arrowup)str+='<div class="arrow-up"></div>';
 			str+='<div style="background:'+can.background+';"  id="rockmenuli_'+rand+'" class="rockmenuli '+can.maincls+'"><ul>';
 			var s	= '',ys='',col,va;
-
 			for(var i=0; i<len; i++){
 				ys= '',
 				va= json[i][can.display];
@@ -71,7 +70,6 @@ var rockmenuobj	= null;
 			str+='</ul></div></div>';
 			$('body').prepend(str);
 			var oac	= $('#rockmenu_'+rand+'');
-			
 			can.aftershow(this);
 			oac.find('li').mouseover(function(){this.className=can.overcls;});
 			oac.find('li').mouseout(function(){this.className='';});

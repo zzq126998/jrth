@@ -138,7 +138,24 @@ if($showheader==1)echo '<div id="header_title" class="header"><span onclick="js.
 				echo $stsp;
 			}
 		}
-		
+		//--start--
+		if($da['moders']['isflow']==3 || ($da['moders']['isflow']==4 && isset($da['courserows']))){
+			$str1 = '<tr><td colspan="2"><div style="text-align:center;background:#EDF7FC;line-height:30px;border-radius:5px;margin-top:20px;"><b>下步处理</b></div></td></tr>';
+			$str2 = $inputobj->inputchangeuser(array(
+				'name'		=>'sys_nextcoursename',
+				'id'		=>'sys_nextcoursenameid',
+				'placeholder'=>'选择下步处理人',
+				'type'		=> 'changeusercheck',
+				'title'		=> '选择下步处理人',
+			));
+			$str3 = '';
+			$dsa1 = ($da['moders']['isflow']==4) ? 'none' : '';
+			foreach($da['courserows'] as $k3=>$rs3)$str3.='<option changerange="'.$rs3['checktypeid'].'" value="'.$rs3['id'].'" checktype="'.$rs3['checktype'].'">'.$rs3['id'].'.'.$rs3['name'].'</option>';
+			$str1.= '<tr><td class="lurim" nowrap><font color="red">*</font>下步处理</td><td><div class="divinput"><select name="sys_nextcourseid" class="inputs" onchange="c.changenextcourse(this, '.$da['moders']['isflow'].')"><option value="">-请选择-</option>'.$str3.'</select></div></td></tr>';
+			$str1.= '<tr style="display:'.$dsa1.'" id="sys_nextcoursediv1"><td class="lurim" nowrap><font color="red">*</font>下步处理人</td><td><div class="divinput">'.$str2.'</div></td></tr>';
+			echo $str1;
+		}
+		//--end--
 		
 		//是否抄送
 		$iscs = (int)$da['moders']['iscs'];

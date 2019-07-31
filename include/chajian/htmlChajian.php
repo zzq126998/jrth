@@ -34,7 +34,6 @@ class htmlChajian extends Chajian{
 	
 	public function createtable($fields, $arr, $title='',$lx='',$bcolor='')
 	{
-		// var_dump($fields);exit;
 		if(isempt($bcolor))$bcolor = '#cccccc';
 		if($lx=='print'){
 			$bcolor = '#000000';
@@ -44,11 +43,6 @@ class htmlChajian extends Chajian{
 		if($title != ''){
 			$s .= '<tr><td colspan="2" align="center" style="border:1px '.$bcolor.' solid;padding:10px;font-size:16px;background:#D2E9FF;">'.$title.'</td></tr>';
 		}
-		
-		if(isset($arr["peoid"]) && $arr["peoid"]=="运营类"){
-			 unset($fields["subdata0"]);
-			 unset($fields["subdata1"]);
-		}	
 		foreach($fields as $fid=>$na){
 			$val = '';
 			$sty = 'padding:8px;';
@@ -92,32 +86,21 @@ class htmlChajian extends Chajian{
 		$style	 = "padding:3px;border:1px ".$bor." solid";
 		if($lx=='print')$style	 = "border:.5pt #000000 solid";
 		$txt	.= '<table width="100%" class="createrows" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;" >';
-		// $txt	.= '<tr>';
-		// for($h=0; $h<$thead; $h++){
-		// 	$stls= $style;
-		// 	if($lx=='noborder'){
-		// 		$stls.=';border-top:none';
-		// 		if($h==0)$stls.=';border-left:none';
-		// 		if($h==$lens)$stls.=';border-right:none';
-		// 	}
-		// 	$txt.= '<td style="'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
-			
-		// }
-		// $txt	.= '</tr>';
+		$txt	.= '<tr>';
+		for($h=0; $h<$thead; $h++){
+			$stls= $style;
+			if($lx=='noborder'){
+				$stls.=';border-top:none';
+				if($h==0)$stls.=';border-left:none';
+				if($h==$lens)$stls.=';border-right:none';
+			}
+			$txt.= '<td style="'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
+		}
+		$txt	.= '</tr>';
 		foreach($rows as $k=>$rs){
+			$txt	.= '<tr>';
 			$rs['xuhaos'] = $k+1;
-            if($head[1][0]=="physicalprove"){//是否存在证件类型字段
-                if($rs["physicalprove"]==1){//证件类型为一级，取消二级显示
-                    array_splice($head,10,8);
-                    $thead		= count($head);
-                }
-                if($rs["physicalprove"]==2){//证件类型为二级，取消一级显示
-                    array_splice($head,2,8);
-                    $thead		= count($head);
-                }
-            }
-			for($h=1; $h<$thead; $h++){
-				$txt	.= '<tr>';
+			for($h=0; $h<$thead; $h++){
 				$stls= $style;
 				$stls.='';
 				if($lx=='noborder'){
@@ -126,20 +109,9 @@ class htmlChajian extends Chajian{
 					if($k==$rlen-1)$stls.=';border-bottom:none';
 				}
 				$val 	 = isset($rs[$head[$h][0]]) ? $rs[$head[$h][0]] : '';
-				$txt.= '<td style="width: 50%;'.$stls.'" bgcolor="#eeeeee" align="'.$head[$h][2].'"><b>'.$head[$h][1].'</b></td>';
-                if($head[$h][0]=="physicalprove"){
-                    if($val==1){
-                        $val="一级体检";
-                    }elseif ($val==2){
-                        $val="二级体检";
-                    }else {
-                        $val="其他";
-                    }
-                }
 				$txt	.= '<td style="'.$stls.'" align="'.$head[$h][2].'">'.$val.'</td>';
-				$txt	.= '</tr>';
 			}	
-
+			$txt	.= '</tr>';
 		}
 		$txt	.= '</table>';
 		return $txt;
