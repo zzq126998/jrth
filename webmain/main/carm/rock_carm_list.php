@@ -43,7 +43,7 @@ $(document).ready(function(){
 			a.exceldown();
 		},
 		adds:function(){
-			openinput('车辆管理',modenum);
+			openinput('飞机管理',modenum);
 		},
 		search:function(){
 			var s=get('key_{rand}').value;
