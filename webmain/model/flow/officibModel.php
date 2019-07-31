@@ -5,13 +5,13 @@ class flow_officibClassModel extends flowModel
 	
 	public function initModel()
 	{
-		
+		$this->wherejoin['officifa'] = 'gwid';
 	}
 
 	protected function flowdatalog($arr)
 	{
 		$arr['title'] = $this->moders['name'];
-
+		
 		return $arr;
 	}
 	
@@ -34,4 +34,12 @@ class flow_officibClassModel extends flowModel
 		return '收文登记';
 	}
 	
+	public function flowrsreplace($rs, $lx=0)
+	{
+
+		
+		if(isempt($rs['recename']))$rs['recename']='<font color="blue">未分发</font>';
+		
+		return $rs;
+	}
 }

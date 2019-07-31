@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/js.js"></script>
 <script>
 var ismobile = <?=$da['ismobile']?>;
-var fileid  = <?=$da['frs']['id']?>,localpath='';
+var fileid  = <?=$da['frs']['id']?>;
 function zhuang(id,o){
 	var o1 = $(o).parent();
 	o1.html(js.getmsg('发送转化中...'));
@@ -17,7 +17,6 @@ function zhuang(id,o){
 		var det = js.decode(s);
 		if(det.success){
 			o1.html(js.getmsg('√ 已发送，大概在<font color=red id="times">20</font>秒后可刷新查看', 'green')+'，<a href="javascript:;" class="zhu" onclick="location.reload()">[刷新看一下]</a>');
-			localpath=det.data.localpath;
 			timeshow(det.data.times);
 			js.msg('success','已发送，文件越大等待时间越长');
 		}else{
@@ -31,7 +30,7 @@ function timeshow(s){
 		js.setmsg('预览请求处理超时','red','showtishi');
 		return;
 	}
-	var url = js.getajaxurl('officestatus','public')+'&id='+fileid+'&localpath='+localpath+'';
+	var url = js.getajaxurl('officestatus','public')+'&id='+fileid+'';
 	$.get(url,function(res){
 		var det = js.decode(res);
 		if(det.success){

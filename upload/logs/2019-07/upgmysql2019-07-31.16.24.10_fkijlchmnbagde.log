@@ -1,0 +1,16 @@
+[2019-07-31 16:24:10]:http://192.168.0.13/index.php?a=shengjianss&m=upgrade&d=system&ajaxbool=true&rnd=144647
+CREATE TABLE `xinhu_officialmb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL COMMENT '模版标题',
+  `fenlei` varchar(20) DEFAULT NULL COMMENT '分类',
+  `receid` varchar(1000) DEFAULT NULL,
+  `recename` varchar(1000) DEFAULT NULL COMMENT '可使用人',
+  `content` varchar(4000) DEFAULT NULL COMMENT '内容',
+  `optid` int(11) DEFAULT NULL,
+  `optname` varchar(50) DEFAULT NULL,
+  `optdt` datetime DEFAULT NULL,
+  `sort` int(11) DEFAULT '0' COMMENT '排序号',
+  `status` tinyint(1) DEFAULT '0' COMMENT '状态',
+  `explain` varchar(2000) DEFAULT NULL COMMENT '说明',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

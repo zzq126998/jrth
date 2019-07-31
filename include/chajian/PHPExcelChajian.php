@@ -1,10 +1,11 @@
 <?php 
 /**
-*	PHPExcel类
+	PHPExcel类
 */
+include_once(ROOT_PATH.'/include/PHPExcel.php');
 class PHPExcelChajian extends Chajian{
 	
-	public  $excel				= null;
+	public  $excel;
 	public  $sheetObj;
 	public	$headlen			= 0;
 
@@ -36,20 +37,7 @@ class PHPExcelChajian extends Chajian{
 	{
 		$this->A	= explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,AZ,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,CR,CS,CT,CU,CV,CW,CX,CY,CZ');
 		$this->headWidth= array();
-		$pastr = ROOT_PATH.'/include/PHPExcel.php';
-		if(file_exists($pastr)){
-			include_once($pastr);
-			$this->excel 	= new PHPExcel();
-		}
-	}
-	
-	public function isBool()
-	{
-		if($this->excel==null){
-			return false;
-		}else{
-			return true;
-		}
+		$this->excel 	= new PHPExcel();
 	}
 	
 	/**
@@ -325,11 +313,14 @@ class PHPExcelChajian extends Chajian{
 		}
 		
 		$title	= $this->title;
-
-		//有随机数
-		$rand		= '';
-		if(contain($type,'rand'))$rand	= date('YmdHis');
+		$dir	= date('Y-m');
+		$path	= ''.ROOT_PATH.'/'.UPDIR.'/'.$dir.'/';
+		if(!is_dir($path))mkdir($path);
+		$rand		= date('YmdHis');
+		$rands		= $rand;
+		
 		$filename	= ''.$title.''.$rand.'.'.$ext.'';
+		$filerand	= ''.$title.''.$rands.'.'.$ext.'';
 
 		//输出
 		if($ext!='xlsx'){
@@ -337,20 +328,14 @@ class PHPExcelChajian extends Chajian{
 		}else{
 			$objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel2007'); //保存excel—2007格式或者
 		}
-		$backfile = 'down';
 		
 		//保存文件
-		if(contain($type,'savelogs')){
-			$dir	= 'logs';
-			$path	= ''.ROOT_PATH.'/'.UPDIR.'/'.$dir.'/';
-			if(!is_dir($path))mkdir($path);
-			$savefile	= $path.''.$this->iconvstr($filename).'';
-			$objWriter->save($savefile); //是否保存本地
-			$backfile	= ''.UPDIR.'/'.$dir.'/'.$filename.'';
-		}
+		$savefile	= $path.''.$this->iconvstr($filerand).'';
+		$objWriter->save($savefile);
+		$backfile	= ''.UPDIR.'/'.$dir.'/'.$filerand.'';
 		
 		//下载
-		if(contain($type, 'down')){
+		if($this->contain($type, 'down')){
 			header('Content-type: application/vnd.ms-excel');
 			header('Content-Disposition: attachment; filename="'.iconv('utf-8', 'gbk', $filename).'"');
 			header('Cache-Control: max-age=0');
