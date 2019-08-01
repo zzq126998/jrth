@@ -102,7 +102,6 @@ class htmlChajian extends Chajian{
 			
 		// }
 		// $txt	.= '</tr>';
-        var_dump($rows);
 		foreach($rows as $k=>$rs){
 			$rs['xuhaos'] = $k+1;
             if($head[1][0]=="physicalprove"){//是否存在证件类型字段
