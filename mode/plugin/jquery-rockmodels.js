@@ -39,6 +39,7 @@
 		$('#rockmodelmsg').css('left',''+le+'px');
 		$.rockmodelmsgtime = setTimeout(function(){
 			$('#rockmodelmsg').remove();
+            $('.modal-backdrop').remove();
 			fun();
 		}, sj*1000);
 	}
