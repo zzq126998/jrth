@@ -1,6 +1,6 @@
 <?php
 if(!defined('HOST'))die('not access');
-//[管理员]在2019-07-31 15:57:32通过[系统→系统工具→系统设置]，保存修改了配置文件
+//[管理员]在2019-08-01 10:13:21通过[系统→系统工具→系统设置]，保存修改了配置文件
 return array(
 	'url'	=> '',	//系统URL
 	'localurl'	=> '',	//本地系统URL，用于服务器上浏览地址
@@ -28,7 +28,7 @@ return array(
 	'qqmapkey'	=> '',
 	'xinhukey'	=> '6baa4419111f2ca38e12061c4d852e6a',	//信呼官网key，用于在线升级使用
 	'bcolorxiang'	=> '',	//单据详情页面上默认展示线条的颜色
-	'officeyl'	=> '0',	//文档Excel.Doc预览类型,0自己部署插件，1使用官网支持任何平台
+	'officeyl'	=> '1',	//文档Excel.Doc预览类型,0自己部署插件，1使用官网支持任何平台
 	'useropt'	=> '',	//1记录用户操作保存到日志里,空不记录
 	'defstype'	=> '1',	//PC后台主题皮肤，可以设置1到34
 	'debug'	=> true,	//为true调试开发模式,false上线模式
