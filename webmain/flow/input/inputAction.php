@@ -289,10 +289,10 @@ class inputAction extends Action
 		$iszb		= $xu+1;
 		$farr		= m('flow_element')->getrows("`mid`='$modeid' and `islu`=1 and `iszb`=$iszb",'`name`,`fields`,`isbt`,`fieldstype`,`savewhere`,`dev`,`data`','`sort`');
 		$sort 		= 0;
-		for($i=0; $i<$oi; $i++){
+		for($i=0; $i<=$oi; $i++){
 			$sid  = (int)$this->post('sid'.$xu.'_'.$i.'');
 			$bos  = true;
-			$uaarr['id'] = $sid;
+			$uaarr = array();
 			foreach($farr as $k=>$rs){
 				$fid= $rs['fields'];
 				$flx= $rs['fieldstype'];
@@ -300,19 +300,25 @@ class inputAction extends Action
 				$na = ''.$fid.''.$xu.'_'.$i.'';
 				$val= $this->post($na);
 				if($rs['isbt']==1&&$this->isempt($val))$bos=false;
-				$uaarr[$fid] = $val;
-				
+				if(!$this->isempt($val)){
+                    $uaarr[$fid] = $val;
+                }
 				if(substr($flx,0,6)=='change' && !isempt($rs['data'])){
 					$na = ''.$rs['data'].''.$xu.'_'.$i.'';
 					$val= $this->post($na);
 					$uaarr[$rs['data']] = $val;
 				}
 			}
+            if(empty($uaarr))continue;
 			if(!$bos)continue;
+            $uaarr['id'] = $sid;
 			$uaarr['sort'] 	= $sort;
 			$sort++;
 			$arr[] = $uaarr;
+
 		}
+//        var_dump("++++++++++++++++++++++");
+//        var_dump($arr);
 		return $arr;
 	}
 	
