@@ -95,6 +95,5 @@ define('ISMORECOM', $config['companymode']);
 
 
 
-
 if(file_exists($_confpath))include_once($_confpath);
 $rock->initRock();

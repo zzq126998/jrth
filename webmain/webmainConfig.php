@@ -1,5 +1,6 @@
 <?php
 if(!defined('HOST'))die('not access');
+//[]在2019-08-02 11:31:50通过[系统→系统工具→系统设置]，保存修改了配置文件
 return array(
 	'url'	=> '',	//系统URL
 	'localurl'	=> '',	//本地系统URL，用于服务器上浏览地址
