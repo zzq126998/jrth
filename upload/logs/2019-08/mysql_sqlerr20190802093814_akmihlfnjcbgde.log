@@ -1,0 +1,26 @@
+[ERROR SQL]
+insert into `xinhu_log` set `type`='pc登录',`ip`='192.168.0.9',`web`='Chrome',`optdt`='2019-08-02 09:38:14',`optid`='1',`optname`='管理员',`remark`='[admin]用户名登录成功',`url`='http://192.168.0.9/index.php?a=check&m=login&d=&ajaxbool=true&rnd=843912',`device`='1564709823769',`level`='0'
+
+[Reason]
+mysqliError:Table 'rockxinhu.xinhu_log' doesn't exist
+
+[URL]
+http://192.168.0.9/index.php?a=check&m=login&d=&ajaxbool=true&rnd=843912
+
+[POST]
+[rempass]:0
+[jmpass]:false
+[device]:1564709823769
+[ltype]:0
+[adminuser]:YWRtaW4:
+[adminpass]:enhjMTIz
+[yanzm]:
+
+[IP]
+192.168.0.9
+
+[datetime]
+2019-08-02 09:38:14
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36

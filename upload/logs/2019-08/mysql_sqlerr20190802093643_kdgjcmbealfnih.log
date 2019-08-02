@@ -1,0 +1,17 @@
+[ERROR SQL]
+SELECT `id`,`typename`,`optdt`,`title`,`optname`,`zuozhe`,`indate`,`recename`,`fengmian`,`mintou`,`status`,`istop`,`appxs` FROM xinhu_infor WHERE 1=1   and `status`=1 and (ifnull(`receid`,'')='' or instr(concat(',', `receid`, ','), ',all,')>0 or instr(concat(',', `receid`, ','), ',u1,')>0 or instr(concat(',', `receid`, ','), ',d1,')>0 or instr(concat(',', `receid`, ','), ',d2,')>0 or instr(concat(',', `receid`, ','), ',d3,')>0) and (`zstart` is null or `zstart`<='2019-08-02') and (`zsend` is null or `zsend`>='2019-08-02')  ORDER BY `istop` desc,`optdt` desc LIMIT 5
+
+[Reason]
+mysqliError:Unknown column 'appxs' in 'field list'
+
+[URL]
+http://192.168.0.9/index.php?a=gettotal&m=index&d=home&atype=&loadci=0&optdt=&nums=kjrk,kjrko,gong,news,kqdk,tjlogin,gwwx,apply,meet,officic,syslog,about&ajaxbool=true&rnd=179031
+
+[IP]
+192.168.0.9
+
+[datetime]
+2019-08-02 09:36:43
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
