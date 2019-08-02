@@ -1,6 +1,6 @@
 <?php
 if(!defined('HOST'))die('not access');
-//[管理员]在2019-08-01 17:07:19通过[系统→系统工具→系统设置]，保存修改了配置文件
+//[]在2019-08-02 10:48:07通过[系统→系统工具→系统设置]，保存修改了配置文件
 return array(
 	'url'	=> '',	//系统URL
 	'localurl'	=> '',	//本地系统URL，用于服务器上浏览地址
@@ -34,7 +34,7 @@ return array(
 	'debug'	=> true,	//为true调试开发模式,false上线模式
 	'reim_show'	=> true,	//首页是否显示REIM
 	'mobile_show'	=> true,	//首页是否显示手机版
-	'companymode'	=> true,	//多单位模式，true就是开启
+	'companymode'	=> false,	//多单位模式，true就是开启
 	'loginyzm'	=> '0',	//登录方式:0仅使用帐号+密码,1帐号+密码/手机+验证码,2帐号+密码+验证码,3仅使用手机+验证码
 
 );

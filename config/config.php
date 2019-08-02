@@ -91,13 +91,13 @@ define('VERSION', $config['version']);
 define('HIGHPASS', $config['highpass']);
 define('SYSURL', ''.URL.PATH.'.php');
 define('UPURL', $config['upurl']);
-if($_COOKIE['xinhu_ca_adminuser'] == 'admin'){
-    define('ISMORECOM', false);
-}else{
-    define('ISMORECOM', $config['companymode']);
-}
+define('ISMORECOM', $config['companymode']);
+//if($_COOKIE['xinhu_ca_adminuser'] == 'admin'){
+//    define('ISMORECOM', false);
+//}else{
+//    define('ISMORECOM', $config['companymode']);
+//}
 
 
-$_confpath	= ''.ROOT_PATH.'/config/iplogs.php'; //这个用来限制IP访问的
 if(file_exists($_confpath))include_once($_confpath);
 $rock->initRock();
