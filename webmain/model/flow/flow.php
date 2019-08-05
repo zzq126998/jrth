@@ -486,9 +486,10 @@ class flowModel extends Model
 		//$this->replacepbr($this->rs, 'content');
 		
 		$data 			= $this->flowrsreplace($this->rs, 1);
+
 		$dataa 			= $this->viewjinfields(array($data));
 		$data			= $dataa[0];
-		
+
 		//读取多行子表
 		$subdata 		= $this->getsuballdata(1);
 		foreach($subdata as $zb=>$da){
@@ -521,12 +522,13 @@ class flowModel extends Model
 				$this->replacepbr($data, $fid);
 			}
 		}
-		
-		
+
+
 		$_logarr	 = $qfields = array();
 		foreach($arr['logarr'] as $k1=>$rs1)$_logarr[$rs1['id']] = $rs1;			
 		//读取流程审核步骤信息，只显示同意的
 		$logrows 	 	= $this->flogmodel->getrows($this->mwhere.' and `modeid`='.$this->modeid.' and `courseid`>0 and `courseid`<88888 and `status`>0 and `valid`=1');
+
 		foreach($logrows as $k2=>$rs2){
 			$rs3 		= $_logarr[$rs2['id']];
 			$_coid 		= $rs2['courseid'];
@@ -563,6 +565,7 @@ class flowModel extends Model
 			$contview 	 = $this->flowviewtpl(file_get_contents($path), $lx);
 			$contview 	 	= $this->rock->reparr($contview, $data);
 		}
+
 		$arr['isdefaultview'] = 0;
 		if($this->isempt($contview) || contain($contview, '$contview$')){
 			$arr['isdefaultview'] = 1;
@@ -583,6 +586,7 @@ class flowModel extends Model
 			if($lx==0)foreach($fields as $k=>$rs){$data[''.$k.'_style'] = 'width:75%';break;}
 			$_colsr		= $this->xiangbordercolor;
 			if($_colsr=='')$_colsr = getconfig('bcolorxiang');
+
 			$contvimr 	= c('html')->xiangtable($fields, $data, $_colsr);
 			$contvimr 	= '<div align="center">'.$contvimr.'</div>';
 			
@@ -3425,7 +3429,7 @@ class flowModel extends Model
 				foreach($jinrows as $k2=>$rs2)$jinrow[]=$rs2['id'];
 				$jinkfarr[$k1]['jinrows'] = $jinrow;
 			}
-			
+
 			//隐藏字段设置
 			foreach($rows as $k=>$rs){
 				$id = $rs['id'];
@@ -3444,6 +3448,7 @@ class flowModel extends Model
 				}
 			}
 		}
+
 		return $rows;
 	}
 	

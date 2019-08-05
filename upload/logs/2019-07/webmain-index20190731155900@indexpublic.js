@@ -51,6 +51,7 @@ js.setwhere	= function(mid,call){
 }
 
 function publicstore(mo,dos,oans){
+
 	if(!mo)mo='index';
 	if(!dos)dos='';
 	return js.getajaxurl('publicstore',mo,dos,oans);

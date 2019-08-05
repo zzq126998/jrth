@@ -72,7 +72,6 @@ class customerClassAction extends Action
 			}
 			$rows[]	= $arr;
 		}
-		
 		$barr['rows'] 		= $rows;
 		$barr['totalCount'] = count($rows);
 		return $barr;

@@ -46,7 +46,8 @@ class htmlChajian extends Chajian{
 		if(isset($arr["peoid"]) && $arr["peoid"]=="运营类"){
 			 unset($fields["subdata0"]);
 			 unset($fields["subdata1"]);
-		}	
+		}
+//		print_r($arr);
 		foreach($fields as $fid=>$na){
 			$val = '';
 			$sty = 'padding:8px;';
@@ -64,6 +65,7 @@ class htmlChajian extends Chajian{
 	*/
 	public function xiangtable($fields, $arr,$bcolor='', $lx='')
 	{
+//	    var_dump($arr);
 		return $this->createtable($fields, $arr,'',$lx, $bcolor);
 	}
 	

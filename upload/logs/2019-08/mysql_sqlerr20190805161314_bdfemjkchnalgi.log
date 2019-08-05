@@ -1,0 +1,33 @@
+[ERROR SQL]
+select `name`,`id`,`id` as uid,`face`,`sort`,`deptallname`,`deptpath`,`ranking`,`tel`,`mobile`,`email`,`user`,`num`,`workdate`,`` from xinhu_admin where 1=1      order by sort    limit 0,15
+
+[Reason]
+mysqliError:Unknown column '' in 'field list'
+
+[URL]
+http://xinhu.cc/index.php?a=publicstore&m=mode_jsuser|input&d=flow&modeid=95&ajaxbool=true&rnd=257401&pnum=all
+
+[POST]
+[tablename_abc]:md0me0mo0ppa0de0me0bo0bm06
+[defaultorder]:
+[keywhere]:
+[where]:
+[sort]:
+[dir]:
+[loadci]:1
+[storebeforeaction]:storebeforeshow
+[storeafteraction]:storeaftershow
+[modenum]:jsuser
+[start]:0
+[page]:1
+[limit]:15
+[atype]:all
+
+[IP]
+127.0.0.1
+
+[datetime]
+2019-08-05 16:13:14
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36
