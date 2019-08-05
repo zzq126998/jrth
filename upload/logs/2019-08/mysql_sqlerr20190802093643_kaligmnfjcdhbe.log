@@ -1,0 +1,17 @@
+[ERROR SQL]
+select * from `xinhu_kqdisv` where `dt` like '2019-08%' order by `type`
+
+[Reason]
+mysqliError:Table 'rockxinhu.xinhu_kqdisv' doesn't exist
+
+[URL]
+http://192.168.0.9/index.php?a=gettotal&m=index&d=home&atype=&loadci=0&optdt=&nums=kjrk,kjrko,gong,news,kqdk,tjlogin,gwwx,apply,meet,officic,syslog,about&ajaxbool=true&rnd=179031
+
+[IP]
+192.168.0.9
+
+[datetime]
+2019-08-02 09:36:43
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36

@@ -1,0 +1,17 @@
+[ERROR SQL]
+insert into `xinhu_log` set `type`='错误SQL',`ip`='192.168.0.9',`web`='Chrome',`optdt`='2019-08-02 09:36:40',`optid`='1',`optname`='管理员',`remark`='mysqliError:Table &#39;rockxinhu.xinhu_news&#39; doesn&#39;t exist',`url`='upload/logs/2019-08/mysql_sqlerr20190802093640_kjhgeidnmbaclf.log',`level`='2'
+
+[Reason]
+mysqliError:Table 'rockxinhu.xinhu_log' doesn't exist
+
+[URL]
+http://192.168.0.9/index.php?a=gettotal&m=index&d=home&atype=&loadci=0&optdt=&nums=kjrk,kjrko,gong,news,kqdk,tjlogin,gwwx,apply,meet,officic,syslog,about&ajaxbool=true&rnd=893356
+
+[IP]
+192.168.0.9
+
+[datetime]
+2019-08-02 09:36:40
+
+[Browser]
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36

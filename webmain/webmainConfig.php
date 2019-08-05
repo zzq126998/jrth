@@ -1,6 +1,5 @@
 <?php
 if(!defined('HOST'))die('not access');
-//[]在2019-08-02 11:33:35通过[系统→系统工具→系统设置]，保存修改了配置文件
 return array(
 	'url'	=> '',	//系统URL
 	'localurl'	=> '',	//本地系统URL，用于服务器上浏览地址
@@ -21,7 +20,7 @@ return array(
 	'updir'	=> 'upload',
 	'sqllog'	=> false,	//是否记录sql日志保存upload/sqllog下
 	'asynsend'	=> '0',	//是否异步发送提醒消息，0同步，1自己服务端异步，2官网VIP用户异步
-	'editpass'	=> '1',	//用户登录修改密码：0不用修改，1强制用户必须修改
+	'editpass'	=> '0',	//用户登录修改密码：0不用修改，1强制用户必须修改
 	'install'	=> true,	//已安装，不要去掉啊
 	'outurl'	=> '',	//这个地址当你内网地址访问时向手机推送消息的地址
 	'reimtitle'	=> '',	//REIM即时通信上标题
