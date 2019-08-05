@@ -4,7 +4,7 @@ class inputAction extends Action
 	public $mid = 0;
 	public $flow;
 	public $rs 	= array();
-	
+
 	public function initAction()
 	{
 		/*
@@ -14,25 +14,25 @@ class inputAction extends Action
 		$this->getlogin();
 		$this->loginnot();*/
 	}
-	
+
 	private $fieldarr = array();
 	private $ismobile = 0;
-	
+
 	protected $moders = array();
-	
-	
+
+
 	//保存前处理，主要用于判断是否可以保存
 	protected function savebefore($table,$arr, $id, $addbo){}
-	
+
 	//保存后处理，主要用于判断是否可以保存
 	protected function saveafter($table,$arr, $id, $addbo){}
-	
+
 	//生成列表页，数据读取前处理
 	protected function storebefore($table){}
-	
+
 	//生成列表页，数据读取后处理
 	protected function storeafter($table, $rows){}
-	
+
 	//过滤html代码
 	private function xxsstolt($uaarr)
 	{
@@ -44,7 +44,7 @@ class inputAction extends Action
 		}
 		return $uaarr;
 	}
-	
+
 	/**
 	*	录入的保存
 	*/
@@ -62,15 +62,15 @@ class inputAction extends Action
 		$sysisturn		= (int)$this->post('istrun','1');
 		$checkobj		= c('check');
 		if($this->isempt($table))$this->backmsg('模块未设置表名');
-		
+
 		$fieldsarr		= array();
 		$fiexar			= $this->flow->flowfieldarr($this->flow->fieldsarra, 2);
 		foreach($fiexar as $k2=>$rs2)if($rs2['islu']==1)$fieldsarr[]=$rs2;
 		if(!$fieldsarr)$this->backmsg('没有录入元素');
-		
+
 		$db	   = m($table);$subna = '提交';$addbo = false;$where = "`id`='$id'"; $oldrs = false;
 		$this->mdb = $db;
-		
+
 		if($id==0){
 			$where = '';
 			$addbo = true;
@@ -79,11 +79,11 @@ class inputAction extends Action
 		}else{
 			$oldrs = $db->getone($id);
 			if(!$oldrs)$this->backmsg('记录不存在');
-			
+
 			$this->flow->loaddata($id);
 			if(!$this->flow->iseditqx())
 				$this->backmsg('无权编辑['.$this->moders['name'].']的数据;');
-			
+
 			if($isflow>0){
 				if($oldrs['uid']==$uid || $oldrs['optid']==$uid || $this->flow->floweditother){
 				}else{
@@ -109,7 +109,7 @@ class inputAction extends Action
 			$uaarr[$fid] = $val;
 			$farrs[$fid] = array('name' => $rs['name']);
 		}
-		
+
 		//人员选择保存的
 		$otherfileid = '';
 		foreach($fieldsarr as $k=>$rs){
@@ -132,7 +132,7 @@ class inputAction extends Action
 				if(!isempt($_val))$otherfileid.=','.$_val.'';
 			}
 		}
-		
+
 		//--start--
 		$xneibo = false;
 		if($isflow==3)$xneibo = true;
@@ -148,7 +148,7 @@ class inputAction extends Action
 			}
 		}
 		//--end--
-		
+
 		//默认字段保存
 		$allfields = $this->db->getallfields('[Q]'.$table.'');
 		if(in_array('optdt', $allfields))$uaarr['optdt'] = $this->now;
@@ -162,7 +162,7 @@ class inputAction extends Action
 			in_array('applyname', $allfields) and $uaarr['applyname'] = $urs['name'];
 			in_array('applydeptname', $allfields) and $uaarr['applydeptname'] = $urs['deptname'];
 		}
-		
+
 		if(in_array('applydt', $allfields) && $id==0)
 			$uaarr['applydt'] = $this->post('applydt', $this->date);
 		if($addbo){
@@ -171,13 +171,13 @@ class inputAction extends Action
 			if(in_array('createid', $allfields))$uaarr['createid'] = $this->adminid;
 			if(in_array('createname', $allfields))$uaarr['createname'] = $this->adminname;
 		}
-		
+
 		//保存公司的
 		if(in_array('comid', $allfields)){
 			if($addbo)$uaarr['comid'] = m('admin')->getcompanyid();
 			if(arrvalue($oldrs,'comid')=='0')$uaarr['comid'] = m('admin')->getcompanyid();
 		}
-		
+
 		if($isflow>0){
 			$uaarr['status']= '0';
 			if($sysisturn==0){
@@ -188,14 +188,14 @@ class inputAction extends Action
 			if(in_array('status', $allfields))$uaarr['status'] = (int)$this->post('status', '1');
 			if(in_array('isturn', $allfields))$uaarr['isturn'] = (int)$this->post('isturn', '1');
 		}
-		
+
 		//保存条件的判断
 		foreach($fieldsarr as $k=>$rs){
 			$ss  = '';
 			if(isset($uaarr[$rs['fields']]))$ss = $this->flow->savedatastr($uaarr[$rs['fields']], $rs, $uaarr);
 			if($ss!='')$this->backmsg($ss);
 		}
-		
+
 		//判断保存前的
 		$ss 	= '';
 		$befa 	= $this->savebefore($table, $this->getsavenarr($uaarr, $oldrs), $id, $addbo);
@@ -213,18 +213,18 @@ class inputAction extends Action
 			}
 		}
 		if(!$this->isempt($ss))$this->backmsg($ss);
-		
+
 		//不保存字段过滤掉
 		if(is_array($notsave))foreach($notsave as $nofild)if(isset($uaarr[$nofild]))unset($uaarr[$nofild]);
-		
+
 		$uaarr	= $this->xxsstolt($uaarr);//过滤特殊文字
-		
+
 		foreach($uaarr as $kf=>$kv){
 			if(!in_array($kf, $allfields)){
 				$this->backmsg('模块主表['.$this->flow->mtable.']上字段['.$kf.']不存在');
 			}
 		}
-		
+
 		//isonly唯一值的判断
 		foreach($fieldsarr as $k=>$rs){
 			$fiesd  = $rs['fields'];
@@ -235,18 +235,18 @@ class inputAction extends Action
 				}
 			}
 		}
-		
-		
+
+
 		$bo = $db->record($uaarr, $where);;
 		if(!$bo)$this->backmsg($this->db->error());
-		
+
 		if($id==0)$id = $this->db->insert_id();
 		m('file')->addfile($this->post('fileid'), $table, $id, $modenum);
 		if($otherfileid!='')m('file')->addfile(substr($otherfileid,1), '', $id, $modenum);
 		$newrs 	= $db->getone($id);
 		$this->companyid 	= isset($newrs['companyid']) ? (int)$newrs['companyid'] : (int)arrvalue($newrs, 'comid', '0');
 		if($this->companyid==0)$this->companyid = m('admin')->getcompanyid();
-		
+
 		//保存多行子表
 		$tabless	 = $this->moders['tables'];
 		if(!isempt($tabless)){
@@ -255,10 +255,10 @@ class inputAction extends Action
 				$this->savesubtable($tablessas, $id, $zbx, $addbo);
 			}
 		}
-		
+
 		//保存后处理
 		$this->saveafter($table,$this->getsavenarr($uaarr, $oldrs), $id, $addbo);
-		
+
 		//保存修改记录
 		$editcont = '';
 		if($oldrs){
@@ -269,17 +269,17 @@ class inputAction extends Action
 		$this->flow->editcont = $editcont;
 		$this->flow->loaddata($id, false);
 		$this->flow->submit($subna);
-		
+
 		$this->backmsg('', $subna, $id);
 	}
-	
+
 	private function getsavenarr($nsrr, $bos=false)
 	{
 		if(!is_array($bos))$bos = array();
 		if($nsrr)foreach($nsrr as $k=>$v)$bos[$k]=$v;
 		return $bos;
 	}
-	
+
 	public function getsubtabledata($xu)
 	{
 		$arr 	= array();
@@ -321,7 +321,7 @@ class inputAction extends Action
 //        var_dump($arr);
 		return $arr;
 	}
-	
+
 	//多行子表的保存
 	private function savesubtable($tables, $mid, $xu, $addbo)
 	{
@@ -343,16 +343,16 @@ class inputAction extends Action
 			$oarray['sslx']	= $xu;
 			$whes			= ' and `sslx`='.$xu.'';
 		}
-		
+
 		if(in_array('comid', $allfields))$oarray['comid'] 		= $this->companyid;
-		
+
 		if($data)foreach($data as $k=>$uaarr){
 			$sid 			= $uaarr['id'];
 			$where			= "`id`='$sid'";
 			$uaarr['mid'] 	= $mid;
 			if($sid==0)$where = '';
 			foreach($oarray as $k1=>$v1)$uaarr[$k1]=$v1;
-			
+
 			$dbs->record($uaarr, $where);
 			if($sid==0)$sid = $this->db->insert_id();
 			$idss.=','.$sid.'';
@@ -360,7 +360,7 @@ class inputAction extends Action
 		$delwhere = "`mid`='$mid'".$whes." and `id` not in($idss)";
 		$dbs->delete($delwhere);
 	}
-	
+
 	//获取数据
 	public function getdataAjax()
 	{
@@ -369,14 +369,14 @@ class inputAction extends Action
 		$arr 	 = m('flow')->getdataedit($flownum, $id);
 		$this->backmsg('', '', $arr);
 	}
-	
-	
+
+
 	public function lumAction()
 	{
 		$this->ismobile = 1;
 		$this->luactions();
 	}
-	
+
 	public function luAction()
 	{
 		$this->ismobile = 0;
@@ -401,7 +401,7 @@ class inputAction extends Action
 		$this->ismobile = 1;
 		$this->luactions(0, '', 1);
 	}
-	
+
 	//$lutype=1高级搜索用的
 	private function luactions($slx=0, $stwhe='', $lutype=0)
 	{
@@ -415,7 +415,7 @@ class inputAction extends Action
 		$moders		= $this->flow->moders;
 		$modename 	= $moders['name'];
 		if($moders['status']=='0')exit('模块['.$modename.']已停用了;');
-		
+
 		$apaths		= ''.P.'/flow/input/mode_'.$moders['num'].'Action.php';
 		if(!file_exists($apaths))exit('没有创建布局录入页面，无法打开，请到【流程模块→表单元素管理】下的点按钮“PC端录入页面布局”，更多查看'.c('xinhu')->helpstr('bwb3mf').'。');
 		$isflow		= (int)$moders['isflow'];
@@ -434,15 +434,15 @@ class inputAction extends Action
 			$isadd = m('view')->isadd($modeid, $uid);
 			if(!$isadd)exit('无权添加['.$modename.']的数据;');
 		}
-		
+
 		$content 	= '';
 		$oldrs 		= m($moders['table'])->getone($mid);
 		$this->rs 	= $oldrs;
 		$this->gongsiarr = array();
-		
+
 		$fieldarr 	= m('flow_element')->getrows("`mid`='$modeid' and `iszb`=0 $stwhe",'fields,fieldstype,name,dev,data,isbt,islu,attr,iszb,issou,gongsi,placeholder','`sort`');
 		$fieldarr	= $this->flow->flowfieldarr($fieldarr, $this->ismobile);
-		
+
 		$modelu		= '';
 		foreach($fieldarr as $k=>$rs){
 			if($slx==1 && $oldrs){
@@ -451,7 +451,7 @@ class inputAction extends Action
 			if($lutype==1){
 				$rs['isbt'] = 0;
 				if($rs['issou']==1)$modelu.='{'.$rs['fields'].'}';
-			}else{	
+			}else{
 				if($rs['islu'] || $stwhe!='')$modelu.='{'.$rs['fields'].'}';
 				if(!isempt($rs['gongsi']) && contain($rs['gongsi'],'{'))$this->gongsiarr[] = array(
 					'iszb' 	 => 0,
@@ -461,7 +461,7 @@ class inputAction extends Action
 			}
 			$this->fieldarr[$rs['fields']] = $rs;
 		}
-		
+
 		$this->smartydata['fieldsjson']	= json_encode($fieldarr);
 		$this->moders	= $moders;
 		$zbshu			= 0;
@@ -473,10 +473,10 @@ class inputAction extends Action
 		$path 			= ''.P.'/flow/page/input_'.$num.'.html';
 		$pclucont 		= '';
 		if(file_exists($path))$pclucont 	= file_get_contents($path);
-		
+
 		$isupfile		= 0;
 		$nameaas 		= explode(',', $moders['names']); //子表名
-		
+
 		//PC端
 		if($this->ismobile==0){
 			$content = $pclucont;
@@ -498,13 +498,13 @@ class inputAction extends Action
 				}
 			}
 			$isupfile = contain($pclucont, '{file_content}') ? 1 : 0;
-			
+
 		}
-		
+
 		if($content=='')exit('未设置录入页面,请到[流程模块→表单元素管理]下设置');
-		
+
 		$content		= $this->flow->flowinputtpl($content, $this->ismobile);
-		
+
 		$this->actclss	= $this;
 		$pathss 		= ''.P.'/flow/input/mode_'.$num.'Action.php';
 		if(file_exists($pathss)){
@@ -516,7 +516,7 @@ class inputAction extends Action
 			$this->actclss->rs 		= $this->rs;
 			$this->actclss->ismobile= $this->ismobile;
 		}
-		
+
 		//初始表单插件元素
 		$this->inputobj	= c('input');
 		$this->inputobj->ismobile 	= $this->ismobile;
@@ -524,7 +524,7 @@ class inputAction extends Action
 		$this->inputobj->flow 		= $this->flow;
 		$this->inputobj->mid 		= $this->mid;
 		$this->inputobj->initUser($this->adminid);
-		
+
 		preg_match_all('/\{(.*?)\}/', $content, $list);
 		foreach($list[1] as $k=>$nrs){
 			$str		= $this->inputobj->getfieldcont($nrs, $this->actclss);
@@ -533,18 +533,18 @@ class inputAction extends Action
 		$this->subfielsa = array();
 		$content 	 	= $this->pisubduolie($content, $modeid, $nameaas);//多列子表匹配的是[]
 		$content		= str_replace('*','<font color=red>*</font>', $content);
-		
+
 		$course			= array();
 		$nowcourseid	= 0;
 		if($isflow>0 && $lutype==0){
 			$course[]= array('name'=>'提交','id'=>0);
-			
+
 			//--start--
 			if($isflow==3){
 				$course[]= array('name'=>'自由流程','id'=>0);
 			}else{
 			//--end--
-			
+
 				$courses	= $this->flow->getflowpipei($this->adminid);
 				if($mid>0){
 					$nowcourseid = $this->flow->billmodel->getmou('nowcourseid',"`table`='".$this->flow->mtable."' and `mid`='$mid'");
@@ -558,7 +558,7 @@ class inputAction extends Action
 					if(arrvalue($moders,'isflowlx')=='1'){
 						$rs1['isnow'] = $k==0; //如果走重头审批第一步就是第一步的
 					}
-					
+
 					//读取上次选择的2019-03-06 23:10:00添加
 					$cuid 	= $name = '';
 					if($rs1['isnow'] && $rs1['checktype']=='change' && $mid>0){
@@ -576,14 +576,14 @@ class inputAction extends Action
 					}
 					$rs1['sysnextoptid']= $cuid;
 					$rs1['sysnextopt']	= $name;
-					
+
 					$course[]=$rs1;
 				}
-				
-			//--start--	
+
+			//--start--
 			}
 			//--end--
-			
+
 			$course[]= array('name'=>'结束','id'=>-1);
 		}
 		$this->title  					= $this->flow->inputtitle();//录入页面的标题
@@ -592,12 +592,12 @@ class inputAction extends Action
 		$this->smartydata['subfielsa']	= $this->subfielsa;
 		$this->smartydata['mid']		= $mid;
 		$this->smartydata['isflow']		= $isflow;
-		
+
 		$this->smartydata['zbnamearr']	= $nameaas;
 		$this->smartydata['zbshu']		= $zbshu;//子表数
 		$this->smartydata['isupfile']	= $isupfile;//是否有上传
 		$this->assign('inputobj', c('input'));
-		
+
 		//--start--
 		//自由流程用户必须选择下步处理人
 		if($isflow==3){
@@ -611,11 +611,11 @@ class inputAction extends Action
 			}
 		}
 		//--end--
-		
+
 		$this->smartydata['course']		= $course;
 		$this->smartydata['inputwidth']	= $this->option->getval('inputwidth', 750);
 	}
-	
+
 	//多行子表内替换
 	private function pisubduolie($content, $modeid, $nameaas)
 	{
@@ -663,13 +663,13 @@ class inputAction extends Action
 		}
 		return $content;
 	}
-	
+
 	public function getselectdataAjax()
 	{
 		$rows 	= array();
 		$act	= $this->get('act');
 		$modenum= $this->get('sysmodenum');
-		
+
 		//用:读取model上的数据
 		if(!isempt($act) && contain($act,':')){
 			$acta = explode(':', $act);
@@ -679,7 +679,7 @@ class inputAction extends Action
 				$rows = $objs->$tacs();
 			}
 		}
-		
+
 		if(!$rows && !isempt($act) && method_exists($this, $act)){
 			$rows = $this->$act();
 		}
@@ -690,14 +690,14 @@ class inputAction extends Action
 				$rows = $this->flow->$act();
 			}
 		}
-		
+
 		return $rows;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	/**
 	*	公共读取数据之前处理
 	*/
@@ -731,14 +731,16 @@ class inputAction extends Action
 				}
 			}
 		}
+
 		return $this->storebefore($table);
 	}
-	
+
 	/**
 	*	公共读取数据之后处理，展示列数
 	*/
 	public function storeaftershow($table, $rows)
 	{
+
 		$barr['rows'] 		= $rows;
 		$barr['atypearr'] 	= $this->atypearr;
 		if($this->loadci==1){
@@ -753,7 +755,7 @@ class inputAction extends Action
 		foreach($this->flow->fieldsarra as $k2=>$rs2){
 			if($rs2['fieldstype']=='uploadimg')$farrl[$rs2['fields']]=$rs2['fieldstype'];
 		}
-		
+
 		if($rows)foreach($rows as $k1=>$rs1){
 			foreach($farrl as $fid=>$flx){
 				if(isset($rs1[$fid])){
@@ -771,7 +773,7 @@ class inputAction extends Action
 		if(is_array($scarr))foreach($scarr as $k=>$v)$barr[$k]=$v;
 		return $barr;
 	}
-	
+
 	//获取可搜索列表
 	public function getcolumnsAjax()
 	{
@@ -782,7 +784,7 @@ class inputAction extends Action
 		$souarr 	= array();
 		$this->input= c('input');
 		foreach($flow->fieldsarra as $k=>$rs){
-			
+
 			if($rs['issou']==1){
 				$rs['store'] = $this->input->getdatastore($rs['fieldstype'], $this, $rs['data']);
 				$souarr[] = $rs;
@@ -790,7 +792,7 @@ class inputAction extends Action
 		}
 		$this->returnjson($souarr);
 	}
-	
+
 	//初始化导入
 	public function initdaoruAjax()
 	{
@@ -815,18 +817,18 @@ class inputAction extends Action
 		}
 		$fields = substr($fields, 1);
 		if($fieldss!='')$fieldss = substr($fieldss,1);
-		
+
 		$data  	= c('html')->importdata($fields, $fieldss); //获取提交过来要导入的数据库
 		if(!$data)return returnerror('没有可导入的数据,注意*是必填的哦');
-		
+
 		$msgstr = '';
-		
+
 		//保存前判断
 		if(method_exists($flow,'flowdaorubefore')){
 			$data = $flow->flowdaorubefore($data);
 			if(is_string($data))return returnerror($data);
 		}
-		
+
 		//判断是否有重复
 		$ldata 	= array();
 		foreach($data as $k=>$rs){
@@ -846,11 +848,11 @@ class inputAction extends Action
 		}
 		if(!$ldata)return returnerror('没有可导入的数据'.$msgstr.'');
 		$allfields = $this->db->getallfields('[Q]'.$flow->mtable.'');
-		
+
 		$oi 	= 0;
 		$dorudat= array();
 		foreach($ldata as $k=>$rs){
-		
+
 			$id 	= (int)arrvalue($rs,'id','0');
 			$where 	= '';
 			if($id>0){
@@ -868,13 +870,13 @@ class inputAction extends Action
 				if(!isset($rs['createdt']) && in_array('createdt', $allfields))$rs['createdt'] = $this->now;
 				if(!isset($rs['comid']) && in_array('comid', $allfields))$rs['comid'] = m('admin')->getcompanyid();
 			}
-			
+
 			if(!isset($rs['uid']) && in_array('uid', $allfields))$rs['uid'] = $this->adminid;
 			if(!isset($rs['optid']) && in_array('optid', $allfields))$rs['optid'] = $this->adminid;
 			if(!isset($rs['optname']) && in_array('optname', $allfields))$rs['optname'] = $this->adminname;
 			if(!isset($rs['optdt']) && in_array('optdt', $allfields))$rs['optdt'] = $this->now;
 			if(!isset($rs['applydt']) && in_array('applydt', $allfields))$rs['applydt'] = $this->date;
-			
+
 			if($id==0){
 				$bo = $flow->insert($rs);
 			}else{
@@ -885,7 +887,7 @@ class inputAction extends Action
 				$rs['id'] = $bo;
 				$dorudat[]= $rs;
 				$oi++;
-				
+
 				//有流程的模块就要提交操作
 				$status = arrvalue($rs,'status','0'); //状态
 				$isturn = arrvalue($rs,'isturn','1'); //默认是提交的
@@ -894,14 +896,14 @@ class inputAction extends Action
 					$na = ($isturn=='1') ? '提交' : '保存';
 					$flow->submit($na);
 				}
-				
+
 			}else{
 				$msgstr.='行'.($k+1).'保存数据库错误;';
 			}
 		}
-		
+
 		if($oi==0)return returnerror('导入数据为0条'.$msgstr.'');
-		
+
 		//保存后判断
 		if(method_exists($flow,'flowdaoruafter')){
 			$flow->flowdaoruafter($dorudat);
@@ -909,7 +911,7 @@ class inputAction extends Action
 
 		return returnsuccess('成功导入'.$oi.'条数据'.$msgstr.'');
 	}
-	
+
 	//读取导入的excel数据
 	public function readxlsAjax()
 	{
@@ -947,10 +949,10 @@ class inputAction extends Action
 			if($k>0)$str.="\n";
 			$str.=$str1;
 		}
-		
+
 		return returnsuccess($str);
 	}
-	
+
 	//下载导入的模版
 	public function daoruexcelAction()
 	{
@@ -998,7 +1000,7 @@ class inputAction extends Action
 			$str.='</tr>';
 		}
 		$str.= '</table>';
-		
+
 		$pexecl = c('PHPExcel');
 		if($pexecl->isBool()){
 			$pexecl->title 		= ''.$modenum.'_import';
@@ -1011,7 +1013,7 @@ class inputAction extends Action
 			return $str;
 		}
 	}
-	
+
 	public function getuinfoAjax()
 	{
 		$uid = $this->post('uid', $this->adminid);
@@ -1020,7 +1022,7 @@ class inputAction extends Action
 		if($unrs)foreach($unrs as $k=>$v)$rs[$k] =$v;
 		return $rs;
 	}
-	
+
 	public function upimagepathAjax()
 	{
 		$fileid = (int)$this->get('fileid');

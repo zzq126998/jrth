@@ -36,7 +36,7 @@ class flow_jsuserClassModel extends flowModel
 			$where.= " and instr(`deptpath`,'[$detpid]')>0";
 		}
 		return array(
-			'fields'=> '`name`,`id`,`id` as uid,`face`,`sort`,`deptallname`,deptpath,`ranking`,`tel`,`mobile`,`email`,`user`,num,workdate,sex,deptname,deptnames,superman,status,type,online,lastonline,isvcard,peoid',
+			'fields'=> '`name`,`id`,`id` as uid,`face`,`sort`,`deptallname`,deptpath,`ranking`,`tel`,`mobile`,`email`,`user`,num,workdate,sex,deptname,deptnames,superman,status,type,online,lastonline,isvcard,peoid,companyid',
 			'order' => 'sort',
 			'where' => $where
 		);
@@ -45,7 +45,7 @@ class flow_jsuserClassModel extends flowModel
 	//替换
 	public function flowrsreplace($rs, $lx=0)
 	{
-		
+
 		if(isset($rs['mobile'])){
 			$sjhao = $rs['mobile'];
 			if($lx==2)$rs['mobile']	= substr($rs['mobile'],0,3).'****'.substr($rs['mobile'],-4);
@@ -59,8 +59,8 @@ class flow_jsuserClassModel extends flowModel
 		$type = arrvalue($rs,'type');
 		if($type=='0')$rs['type']='';
 		if($type=='1')$rs['type']='<font color=green>是</font>';
-		if(isset($rs['companyid']) && $lx==1)$rs['companyid'] = m('company')->getmou('name',"`id`='".$rs['companyid']."'");
-		
+//		if(isset($rs['companyid']) && $lx==1)$rs['companyid'] = m('company')->getmou('name',"`id`='".$rs['companyid']."'");
+        $rs['companyid'] = m('company')->getmou('name',"`id`='".$rs['companyid']."'");
 		//判断当前用户状态
 		$online 	= arrvalue($rs,'online','0');
 		$lastonline = arrvalue($rs,'lastonline');
