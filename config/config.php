@@ -92,7 +92,7 @@ define('HIGHPASS', $config['highpass']);
 define('SYSURL', ''.URL.PATH.'.php');
 define('UPURL', $config['upurl']);
 
-define('ISMORECOM', $config['companymode']);
+//define('ISMORECOM', $config['companymode']);
 
 if(!empty($_COOKIE['xinhu_ca_adminuser'])){
     if($_COOKIE['xinhu_ca_adminuser'] == 'admin'){

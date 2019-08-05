@@ -1,8 +1,8 @@
 <?php
 /**
-*	模块：carm.车辆管理
+*	模块：carm.飞机管理
 *	说明：自定义区域内可写你想要的代码
-*	来源：流程模块→表单元素管理→[模块.车辆管理]→生成列表页
+*	来源：流程模块→表单元素管理→[模块.飞机管理]→生成列表页
 */
 defined('HOST') or die ('not access');
 ?>
@@ -11,7 +11,7 @@ $(document).ready(function(){
 	{params}
 	var modenum = 'carm',modename='飞机管理',isflow=0,modeid='42',atype = params.atype,pnum=params.pnum,modenames='';
 	if(!atype)atype='';if(!pnum)pnum='';
-	var fieldsarr = [{"name":"\u7533\u8bf7\u4eba","fields":"base_name"},{"name":"\u7533\u8bf7\u4eba\u90e8\u95e8","fields":"base_deptname"},{"name":"\u5355\u53f7","fields":"sericnum"},{"fields":"carnum","name":"\u8f66\u724c\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"cartype","name":"\u8f66\u8f86\u7c7b\u578b","fieldstype":"rockcombo","ispx":"0","isalign":"0","islb":"1"},{"fields":"carbrand","name":"\u8f66\u8f86\u54c1\u724c","fieldstype":"rockcombo","ispx":"0","isalign":"0","islb":"1"},{"fields":"carmode","name":"\u578b\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"buydt","name":"\u8d2d\u4e70\u65e5\u671f","fieldstype":"date","ispx":"1","isalign":"0","islb":"1"},{"fields":"buyprice","name":"\u8d2d\u4e70\u4ef7\u683c","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"framenum","name":"\u8f66\u67b6\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"enginenb","name":"\u53d1\u52a8\u673a\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"ispublic","name":"\u662f\u5426\u516c\u5f00\u4f7f\u7528","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"},{"fields":"state","name":"\u72b6\u6001","fieldstype":"select","ispx":"1","isalign":"0","islb":"1"},{"fields":"explain","name":"\u8bf4\u660e","fieldstype":"textarea","ispx":"0","isalign":"0","islb":"1"},{"fields":"djshu","name":"\u767b\u8bb0\u6570","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"}],fieldsselarr= [];
+	var fieldsarr = [{"name":"\u7533\u8bf7\u4eba","fields":"base_name"},{"name":"\u7533\u8bf7\u4eba\u90e8\u95e8","fields":"base_deptname"},{"name":"\u5355\u53f7","fields":"sericnum"},{"fields":"comid","name":"\u6240\u5c5e\u516c\u53f8","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"carnum","name":"\u8f66\u724c\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"cartype","name":"\u98de\u673a\u7c7b\u578b","fieldstype":"rockcombo","ispx":"0","isalign":"0","islb":"1"},{"fields":"carbrand","name":"\u98de\u673a\u54c1\u724c","fieldstype":"rockcombo","ispx":"0","isalign":"0","islb":"1"},{"fields":"carmode","name":"\u578b\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"},{"fields":"buydt","name":"\u8d2d\u4e70\u65e5\u671f","fieldstype":"date","ispx":"1","isalign":"0","islb":"1"},{"fields":"buyprice","name":"\u8d2d\u4e70\u4ef7\u683c","fieldstype":"number","ispx":"0","isalign":"0","islb":"1"},{"fields":"framenum","name":"\u98de\u673a\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"enginenb","name":"\u53d1\u52a8\u673a\u53f7","fieldstype":"text","ispx":"0","isalign":"0","islb":"0"},{"fields":"ispublic","name":"\u662f\u5426\u516c\u5f00\u4f7f\u7528","fieldstype":"checkbox","ispx":"1","isalign":"0","islb":"1"},{"fields":"state","name":"\u72b6\u6001","fieldstype":"select","ispx":"1","isalign":"0","islb":"1"},{"fields":"explain","name":"\u8bf4\u660e","fieldstype":"textarea","ispx":"0","isalign":"0","islb":"1"},{"fields":"djshu","name":"\u767b\u8bb0\u6570","fieldstype":"text","ispx":"0","isalign":"0","islb":"1"}],fieldsselarr= [];
 	
 	var c = {
 		reload:function(){
@@ -138,7 +138,7 @@ $(document).ready(function(){
 		},
 		daoru:function(){
 			window.managelistcarm = a;
-			addtabs({num:'daorucarm',url:'flow,input,daoru,modenum=carm',icons:'plus',name:'导入车辆管理'});
+			addtabs({num:'daorucarm',url:'flow,input,daoru,modenum=carm',icons:'plus',name:'导入飞机管理'});
 		},
 		initcolumns:function(bots){
 			var num = 'columns_'+modenum+'_'+pnum+'',d=[],d1,d2={},i,len=fieldsarr.length,bok;
@@ -210,7 +210,7 @@ $(document).ready(function(){
 		fanye:true,modenum:modenum,modename:modename,statuschange:false,tablename:jm.base64decode('Y2FybQ::'),
 		url:c.storeurl(),storeafteraction:'storeaftershow',storebeforeaction:'storebeforeshow',
 		params:{atype:atype},
-		columns:[{text:"车牌号",dataIndex:"carnum"},{text:"车辆类型",dataIndex:"cartype"},{text:"车辆品牌",dataIndex:"carbrand"},{text:"型号",dataIndex:"carmode"},{text:"购买日期",dataIndex:"buydt",sortable:true},{text:"购买价格",dataIndex:"buyprice"},{text:"是否公开使用",dataIndex:"ispublic",sortable:true},{text:"状态",dataIndex:"state",sortable:true},{text:"说明",dataIndex:"explain"},{text:"登记数",dataIndex:"djshu"},{
+		columns:[{text:"所属公司",dataIndex:"comid"},{text:"车牌号",dataIndex:"carnum"},{text:"飞机类型",dataIndex:"cartype"},{text:"飞机品牌",dataIndex:"carbrand"},{text:"型号",dataIndex:"carmode"},{text:"购买日期",dataIndex:"buydt",sortable:true},{text:"购买价格",dataIndex:"buyprice"},{text:"是否公开使用",dataIndex:"ispublic",sortable:true},{text:"状态",dataIndex:"state",sortable:true},{text:"说明",dataIndex:"explain"},{text:"登记数",dataIndex:"djshu"},{
 			text:'',dataIndex:'caozuo',callback:'opegs{rand}'
 		}],
 		itemdblclick:function(){

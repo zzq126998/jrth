@@ -367,7 +367,7 @@ class inputAction extends Action
 		$flownum = $this->request('flownum');
 		$id		 = (int)$this->request('mid');
 		$arr 	 = m('flow')->getdataedit($flownum, $id);
-		$this->backmsg('', '', $arr);
+            $this->backmsg('', '', $arr);
 	}
 	
 	

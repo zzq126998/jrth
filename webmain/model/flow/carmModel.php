@@ -17,6 +17,7 @@ class flow_carmClassModel extends flowModel
 			$rs['state'] = '<font color="'.$b[0].'">'.$b[1].'</font>';
 		}
 		$b 			 	= $this->publiarr[$rs['ispublic']];
+        $rs['comid'] = m('company')->getmou('name',"`id`='".$rs['comid']."'");
 		$rs['ispublic'] = '<font color="'.$b[0].'">'.$b[1].'</font>';
 		$rs['djshu']	= $this->carms->rows('carid='.$rs['id'].'');
 		return $rs;
